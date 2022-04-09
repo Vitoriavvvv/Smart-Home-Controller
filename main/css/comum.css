@@ -1,0 +1,18 @@
+body {
+    font-size: 15px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+#app {
+    width: 400px;
+    height: 600px;
+    margin: 0 auto;
+    /*
+       background color to be changed
+    */
+    background-color: aliceblue;
+}
