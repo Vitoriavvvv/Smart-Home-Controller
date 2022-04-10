@@ -12,3 +12,13 @@ main::-webkit-scrollbar {
     background-color: purple;
     color: aliceblue;
 }
+
+.hide-list {
+    display: none;
+    background-color: #fff;
+}
+
+.lista-notificacoes a:focus + .hide-list,
+.hide-list:hover {
+    display: block;
+}

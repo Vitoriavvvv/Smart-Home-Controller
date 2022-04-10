@@ -15,6 +15,7 @@ li {
     background-color: beige;
     margin-left: 30px;
     margin-right: 30px;
+    margin-bottom: 10px;
 }
 
 li:hover {
