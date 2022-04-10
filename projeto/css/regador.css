@@ -11,18 +11,7 @@ header {
     margin-right: 40px;
 }
 
-li {
-    background-color: beige;
-    margin-left: 30px;
-    margin-right: 30px;
-}
-
-li:hover {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    transition-duration: 0.2s;
-}
-
-#addGadget {
+#done {
     /* button style */
     border-radius: 5px;
     border-color: black;
@@ -33,9 +22,18 @@ li:hover {
 
     /* button position */
     margin-top: 200px;
+    margin-left: 250px;
 }
 
-#addGadget:hover {
+#done:hover {
     font-size: medium;
     transition-duration: 0.2s;
+}
+
+.regaAuto {
+    text-align: left;
+    margin-left: 50px;
+}
+
+input {
 }
