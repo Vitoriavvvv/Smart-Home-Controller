@@ -1,0 +1,14 @@
+main {
+    height: 375px;
+    overflow-y: scroll;
+}
+
+main::-webkit-scrollbar {
+    display: none;
+}
+
+.lista-notificacoes li:hover,
+.lista-notificacoes a:hover {
+    background-color: purple;
+    color: aliceblue;
+}

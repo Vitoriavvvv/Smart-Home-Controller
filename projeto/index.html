@@ -4,36 +4,47 @@
     <meta charset="UTF-8">
     <title>Menu Principal</title>
     <link rel="stylesheet" href="css/comum.css">
-    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="fa/css/all.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
     <div id="app">
         <header>
-            <div id="user">
-                <a href="#">Utilizador</a>
-            </div>
-            <div id="definition">
-                <a href="#">Definição</a>
-            </div>
+            <a href="#">
+                <div id="user">
+                    <i class="fa-solid fa-user"></i>Utilizador
+                </div>
+            </a>
+            <a href="#">
+                <div id="help">
+                    <i class="fa-solid fa-circle-question"></i>Ajuda
+                </div>
+            </a>
         </header>
+
         <main>
-            <div class="box estado">
-                <a href="html/estado.html">Estado da Casa</a>
-            </div>
-            <div class="box dispositivo">
-                <a href="html/Funcionalidades.html">Funcionalidades</a>
-            </div>
-            <div class="box emergency">
-                <a href="#">Emergência</a>
-            </div>
+            <a href="html/estado.html">
+                <div class="box menu-box">
+                    <i class="fa-solid fa-house menu-icon"></i>Estado da Casa
+                </div>
+            </a>
+            <a href="html/Funcionalidades.html">
+                <div class="box menu-box">
+                    <i class="fa-solid fa-list menu-icon"></i>Funcionalidades
+                </div>
+            </a>
+            <a href="html/lista_notificacoes.html">
+                <div class="box menu-box">
+                    <i class="fa-solid fa-bell menu-icon"></i>Notificações
+                </div>
+            </a>
         </main>
+        
         <footer>
-            <div id="points">
-                <a href="#"><div class="point"></div></a>
-                <a href="#"><div class="point"></div></a>
-                <a href="#"><div class="point"></div></a>
-            </div>
+            <div id="points"></div>
         </footer>
     </div>
+
+    <script src="js/menu.js"></script>
 </body>
 </html>
