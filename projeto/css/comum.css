@@ -1,18 +1,79 @@
 body {
-    font-size: 15px;
+    font-size: 18px;
     text-align: center;
+    color: rgb(85, 26, 139);
+}
+
+header {
+    height: 125px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 a {
     text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    color: blueviolet;
 }
 
 #app {
     width: 400px;
     height: 600px;
     margin: 0 auto;
-    /*
-       background color to be changed
-    */
     background-color: aliceblue;
+}
+
+i {
+    margin-right: 10px;
+}
+
+.title {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.back {
+    font-size: 60px;
+    margin: 20px;
+}
+
+.title-icon {
+    font-size: 50px;
+    margin: 0 30px;
+}
+
+.title {
+    display: inline-block;
+    margin: 30px 15px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+}
+
+.box {
+    width: 300px;
+    margin: 0 auto;
+    background-color: beige;
+}
+
+td:first-child {
+    font-weight: bold;
+}
+
+ul {
+    margin: 0;
+    padding-left: 0;
+    font-size: 20px;
+}
+
+li {
+    list-style-type: none;
+    padding: 10px;
+    margin-bottom: 10px;
 }
