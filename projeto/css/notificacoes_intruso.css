@@ -1,0 +1,22 @@
+main {
+    height: 375px;
+    overflow-y: scroll;
+}
+
+main::-webkit-scrollbar {
+    display: none;
+}
+
+.intrude-item {
+    height: 200px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.treated {
+    color: green;
+}
+
+.untreated {
+    color: red;
+}

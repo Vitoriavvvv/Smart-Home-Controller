@@ -1,0 +1,47 @@
+header {
+    height: 50px;
+    background-color: azure;
+    line-height: 50px;
+}
+
+#user, #help {
+    width: 200px;
+    float: left;
+}
+
+#help {
+    border-left: 1px solid purple;
+    box-sizing: border-box;
+}
+
+.menu-box {
+    height: 100px;
+    line-height: 100px;
+    margin: 50px auto;
+    font-size: 25px;
+}
+
+.box:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.point {
+    width: 20px;
+    height: 20px;
+    background-color: aquamarine;
+    opacity: .7;
+    float: left;
+    margin: 0 10px;
+    border-radius: 50%;
+}
+
+.active,
+.point:hover {
+    background-color: #fff;
+    border: 3px solid purple;
+    box-sizing: border-box;
+}
+
+.menu-icon {
+    font-size: 30px;
+}
