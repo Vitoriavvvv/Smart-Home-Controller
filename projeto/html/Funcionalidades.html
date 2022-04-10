@@ -1,34 +1,40 @@
 <!DOCTYPE html>
 <html>
-
 <head>
+    <meta charset="UTF-8">
+    <title>Funcionalidades</title>
     <link rel="stylesheet" href="../css/comum.css">
     <link rel="stylesheet" href="../css/Funcionalidades.css">
-
+    <link rel="stylesheet" href="../fa/css/all.css">
 </head>
 
 <body>
-    
-<div id="app">
+    <div id="app">
+        <header>
+            <div class="title-wrapper">
+                <a href="../index.html">
+                    <i id="goBack" class="fa fa-chevron-circle-left"></i>
+                </a>
+                <div class="title">Funcionalidades</div>
+            </div>
+        </header>
 
-    <h1>Funcionalidades</h1>
+        <main>
+            <ul class="gadgets">
+                <li><a href="luzes.html">Luzes</a></li>
+                <li><a href="#">Regador</a></li>
+                <li><a href="ac.html">Ar condicionado</a></li>
+                <li><a href="#">TV</a></li>
+            </ul>
+        </main>
 
-    <div id="back">
-        <span id="icone"><a href="../index.html">&#8592;</a></span>
+        <footer>
+            <div>
+                <a href="#">
+                    <button id="addGadget">Adicionar Dispositivo <i class="fa fa-plus"></i></button>
+                </a>
+            </div>
+        </footer>
     </div>
-
-    <ul id="gadgets">
-        <li><a href="luzes.html">Luzes</a></li>
-        <li><a href="#">Regador</a></li>
-        <li><a href="ac.html">Ar condicionado</a></li>
-        <li><a href="#">TV</a></li>
-    </ul>
-    
-    <div id="button">
-        <button id="addGadget">Adicionar Dispositivo</button>
-    </div>
-</div>
-
-
 </body>
 </html>
