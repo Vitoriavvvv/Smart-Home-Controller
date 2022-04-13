@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alerta de Intruso</title>
+    <link rel="stylesheet" href="../css/comum.css">
+    <link rel="stylesheet" href="../fa/css/all.css">
+    <link rel="stylesheet" href="../css/alerta_intruso.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <i class="fa-solid fa-angles-right"></i>
+            <span id="alerta">ALERTA</span>
+            <i class="fa-solid fa-angles-left"></i>
+        </header>
+        <main>
+            <i class="fa-solid fa-person-circle-exclamation alert-icon"></i>
+            <div id="intruder">INTRUSO</div>
+            <div id="local">Localização: Varanda</div>
+        </main>
+        <footer>
+            <div class="horizontal-separator"></div>
+            <div id="option-wrapper">
+                <div id="call-wrapper">
+                    <a href=""></a>
+                    <div id="choose-call" onclick="atendNotification('Chamou a Polícia')"></div>
+                    <div id="call">
+                        <i class="fa-solid fa-phone-volume call-icon"></i><p>112</p>
+                    </div>
+                </div>
+                <div class="vertical-separator"></div>
+                <div id="cancel-wrapper">
+                    <div id="choose-cancel" onclick="atendNotification('Cancelada')"></div>
+                    <div id="cancel-alert">
+                        <i class="fa-solid fa-xmark cancel cancel-icon"></i>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../js/alerta_intruso.js"></script>
+</body>
+</html>

@@ -7,18 +7,55 @@ main::-webkit-scrollbar {
     display: none;
 }
 
-.lista-notificacoes li:hover,
-.lista-notificacoes a:hover {
+#lista-notificacoes li:hover,
+#lista-notificacoes a:hover {
     background-color: purple;
     color: aliceblue;
 }
 
-.hide-list {
+.hidden-list {
     display: none;
     background-color: #fff;
 }
 
-.lista-notificacoes a:focus + .hide-list,
-.hide-list:hover {
+#lista-notificacoes a:focus + .hidden-list,
+.hidden-list:hover {
     display: block;
+}
+
+.onOffButton {
+    font-size: 15px;
+    float: right;
+}
+
+.hidden-list li {
+    text-align: right;
+}
+
+.hidden-list span {
+    float: left;
+}
+
+.onOffBox {
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    background: rgb(153, 151, 151);
+    border-radius: 20px;
+    margin: 0 10px;
+}
+
+.onOffCircle {
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 20px;
+}
+
+.on .onOffCircle {
+    transform: translate(20px, 0);
+}
+
+.on {
+    background-color: rgb(95, 9, 95);
 }
