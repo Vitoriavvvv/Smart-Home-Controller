@@ -10,7 +10,7 @@ Se quiser modificar as informações dos blocos, ir ao "js/index.js"
         <form name="activateAlert" action="./alerta_intruso.html"></form>
         <script src="js/alerta_comum.js"></script>
 
-    Nota: Altere o link da action ou do src se for preciso. 
+    Nota: Altere o link da action ou do src se o ficheiro não está na diretoria html/. 
 
 2. Ligar ou Desligar a alerta de intruso, na GUI "Notificações" -> "Emergênica" -> clicar no botão do "Intruso"
 
