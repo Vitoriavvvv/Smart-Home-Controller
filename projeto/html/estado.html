@@ -11,31 +11,51 @@
 <body>
     <div id="app">
         <header>
-            <a href = "#"><img id = "settings" src="../imgs/settings.png"></a>
             <h1 id = "title">ESTADOS</h1>
             <a href = "../index.html"><img id = "back" src="../imgs/back.png"></a>
         </header>
-        <div id="lista1">
-            <h2>SALA</h2>
-            <h4 id="lista1-1">T: 23.0ºC</h4>
-            <h4 id="lista1-2">O2: 89%<br> OK</h4>
-            <h4 id="lista1-3">CO2: 5%<br> OK</h4>
-        </div>
-        <div id="lista2">
-            <h2>COZINHA</h2>
-            <h4 id="lista2-1">T: 21.5ºC</h4>
-            <h4 id="lista2-2">O2: 93%<br> OK</h4>
-            <h4 id="lista2-3">CO2: 3% <br>OK</h4>
-        </div>
-        <div id="lista3">
-            <h2>QUARTO PAIS</h2>
-            <h4 id="lista3-1">T: 24.5ºC</h4>
-            <h4 id="lista3-2">O2: 90% <br>OK</h4>
-            <h4 id="lista3-3">CO2: 6%<br> OK</h4>
-        </div>
-        <div id="scrollbar">
-            <div id="bar"></div>
-        </div>
+        <main>
+            <div id="lista1">
+                <h2>SALA</h2>
+                <h4 id="lista1-1">T: 23.0ºC</h4>
+                <h4 id="lista1-2">O2: 89%<br> OK</h4>
+                <h4 id="lista1-3">CO2: 5%<br> OK</h4>
+                <div id = "temperatura"><input id="t" step="0.1" type="number" value="23.0" min="10" max="30">
+                <button class="favorite styled" type="button"> Alterar</button></div>
+            </div>
+            <div id="lista2">
+                <h2>COZINHA</h2>
+                <h4 id="lista2-1">T: 21.5ºC</h4>
+                <h4 id="lista2-2">O2: 93%<br> OK</h4>
+                <h4 id="lista2-3">CO2: 3% <br>OK</h4>
+                <div id = "temperatura"><input id="t" step="0.1" type="number" value="21.5" min="10" max="30">
+                <button class="favorite styled" type="button"> Alterar</button></div>
+            </div>
+            <div id="lista3">
+                <h2>QUARTO PAIS</h2>
+                <h4 id="lista3-1">T: 24.5ºC</h4>
+                <h4 id="lista3-2">O2: 90% <br>OK</h4>
+                <h4 id="lista3-3">CO2: 6%<br> OK</h4>
+                <div id = "temperatura"><input id="t" step="0.1" type="number" value="24.5" min="10" max="30">
+                <button class="favorite styled" type="button"> Alterar</button></div>
+            </div>
+            <div id="lista4">
+                <h2>QUARTO JOSÉ</h2>
+                <h4 id="lista4-1">T: 23.5ºC</h4>
+                <h4 id="lista4-2">O2: 72% <br>OK</h4>
+                <h4 id="lista4-3">CO2: 5%<br> OK</h4>
+                <div id = "temperatura"><input id="t" step="0.1" type="number" value="23.5" min="10" max="30">
+                <button class="favorite styled" type="button"> Alterar</button></div>
+            </div>
+            <div id="lista5">
+                <h2>VARANDA</h2>
+                <h4 id="lista5-1">T: 28.3ºC</h4>
+                <h4 id="lista5-2">O2: 90% <br>OK</h4>
+                <h4 id="lista5-3">CO2: 7%<br> OK</h4>
+                <div id = "temperatura"><input id="t" step="0.1" type="number" value="28.3" min="10" max="30">
+                <button class="favorite styled" type="button"> Alterar</button></div>
+            </div>
+        </main>
     </div>
 
     <form name="activateAlert" action="./alerta_intruso.html"></form>
