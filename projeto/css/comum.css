@@ -10,6 +10,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 a {
@@ -32,22 +33,15 @@ i {
     margin-right: 10px;
 }
 
-.title {
-    font-size: 25px;
-    font-weight: bold;
+.goBack {
+    font-size: 40px;
+    position: absolute;
+    top: 40px;
+    left: 20px;
 }
 
-.back {
-    font-size: 60px;
-    margin: 20px;
-}
-
-.title-icon {
-    font-size: 50px;
-    margin: 0 30px;
-}
-
-.title {
+#title {
+    font-size: xx-large;
     display: inline-block;
     margin: 30px 15px;
 }
@@ -78,6 +72,49 @@ li {
     padding: 10px;
 }
 
-.activeAlert {
-  /*   display: hidden; */
+.onOffBox {
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    background: #ccc;
+    border-radius: 20px;
+    margin: 0 10px;
+}
+
+.onOffCircle {
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 20px;
+}
+
+.on .onOffCircle {
+    transform: translate(20px, 0);
+}
+
+.on {
+    background-color: rgb(95, 9, 95);
+}
+
+#addGadget {
+    /* button style */
+    border-radius: 5px;
+    border-color: black;
+    border-width: 1px;
+    border: 3px solid rgb(95, 9, 95);
+    color: rgb(95, 9, 95);
+    transition-duration: 0.2s;
+}
+
+#addGadget:hover {
+    font-size: medium;
+    transition-duration: 0.2s;
+}
+
+main {
+    overflow-y: scroll;
+}
+
+main::-webkit-scrollbar {
+    display: none;
 }

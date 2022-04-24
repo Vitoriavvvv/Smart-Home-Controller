@@ -93,18 +93,18 @@ function switchOnOff (e, title) {
     if (isActive == null) {
         localStorage.setItem(title, 1);
         target_classList.add("on");
-        enableAlert();
+        enableAlert(title);
     } else {
         if (isActive == 1) {
             localStorage.setItem(title, 0);
             target_classList.remove("on");
             target_classList.add("off");
-            disableAlert();
+            disableAlert(title);
         } else {
             localStorage.setItem(title, 1);
             target_classList.remove("off");
             target_classList.add("on");
-            enableAlert();
+            enableAlert(title);
         }
     }
     e.preventDefault();
@@ -137,16 +137,22 @@ function getId(category_name) {
     return str;
 }
 
-function enableAlert() {
-    localStorage.setItem("interval", intervalSeconds);
-    localStorage.setItem("intruder_timeout", intervalSeconds);
-    startAlert();
+// função incompleta, só para ativar "Intruso"
+function enableAlert(title) {
+    if (title == "Intruso") {
+        localStorage.setItem("interval", intervalSeconds);
+        localStorage.setItem("intruder_timeout", intervalSeconds);
+        startAlert();
+    }
 }
 
-function disableAlert() {
-    clearTimeout(ret_timeout);
-    clearInterval(ret_submit);
-    clearInterval(ret_interval);
+// função incompleta, só para desativar "Intruso"
+function disableAlert(title) {
+    if (title == "Intruso") {
+        clearTimeout(ret_timeout);
+        clearInterval(ret_submit);
+        clearInterval(ret_interval);
+    }
 }
 
 

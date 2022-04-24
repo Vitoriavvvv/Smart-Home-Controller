@@ -1,0 +1,29 @@
+main {
+    display: flex;
+    justify-content: center;
+  }
+
+  ul {
+    width: 360px;
+  }
+
+  li {
+    font-size: 20px;
+    height: 50px;
+    line-height: 50px;
+    padding: 10px;
+    border-bottom: 1px solid;
+  }
+
+  li:last-child {
+    border-bottom: none;
+  }
+  
+  li span:first-of-type {
+    float: left;
+    font-size: 25px;
+  }
+
+  li span:last-of-type {
+    float: right;
+  }

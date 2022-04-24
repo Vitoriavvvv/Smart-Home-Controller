@@ -6,16 +6,128 @@
     <title>Casa Inteligente</title>
      <link rel="stylesheet" href="../css/comum.css">
      <link rel="stylesheet" href="../css/estado.css">
+     <link rel="stylesheet" href="../fa/css/all.css">
 </head>
 
 <body>
     <div id="app">
         <header>
-            <h1 id = "title">ESTADOS</h1>
-            <a href = "../index.html"><img id = "back" src="../imgs/back.png"></a>
+            <div class="title-wrapper">
+                <a href="../index.html">
+                    <i class="fa fa-chevron-circle-left goBack"></i>
+                </a>
+                <div id="title">Estados da Casa</div>
+            </div>
         </header>
         <main>
-            <div id="lista1">
+            <table class="box lista">
+                <tr>
+                    <th colspan="3" class="local">
+                        Entrada
+                    </th>
+                </tr>
+                <tr>
+                    <td>Temperatura:</td>
+                    <td>O<sub>2</sub>:</td>
+                    <td>CO<sub>2</sub>:</td>
+                </tr>
+                <tr>
+                    <td>23.5 ºC</td>
+                    <td class="ok">21.0%</td>
+                    <td class="ok">0.04%</td>
+                </tr>
+            </table>
+            <table class="box lista">
+                <tr>
+                    <th colspan="3" class="local">
+                        Sala
+                    </th>
+                </tr>
+                <tr>
+                    <td>Temperatura:</td>
+                    <td>O<sub>2</sub>:</td>
+                    <td>CO<sub>2</sub>:</td>
+                </tr>
+                <tr>
+                    <td>23.0 ºC</td>
+                    <td class="ok">20.8%</td>
+                    <td class="ok">0.10%</td>
+                </tr>
+            </table>
+
+            <table class="box lista">
+                <tr>
+                    <th colspan="3" class="local">
+                        Cozinha
+                    </th>
+                </tr>
+                <tr>
+                    <td>Temperatura:</td>
+                    <td>O<sub>2</sub>:</td>
+                    <td>CO<sub>2</sub>:</td>
+                </tr>
+                <tr>
+                    <td>21.5 ºC</td>
+                    <td class="danger">15.6%</td>
+                    <td class="danger">1.56%</td>
+                </tr>
+            </table>
+
+            <table class="box lista">
+                <tr>
+                    <th colspan="3" class="local">
+                        Casa de Banho
+                    </th>
+                </tr>
+                <tr>
+                    <td>Temperatura:</td>
+                    <td>O<sub>2</sub>:</td>
+                    <td>CO<sub>2</sub>:</td>
+                </tr>
+                <tr>
+                    <td>24.5 ºC</td>
+                    <td class="ok">22.2%</td>
+                    <td class="ok">0.20%</td>
+                </tr>
+            </table>
+
+            <table class="box lista">
+                <tr>
+                    <th colspan="3" class="local">
+                        Quarto 1
+                    </th>
+                </tr>
+                <tr>
+                    <td>Temperatura:</td>
+                    <td>O<sub>2</sub>:</td>
+                    <td>CO<sub>2</sub>:</td>
+                </tr>
+                <tr>
+                    <td>28.3 ºC</td>
+                    <td class="ok">20.1%</td>
+                    <td class="danger">1.11%</td>
+                </tr>
+            </table>
+
+            <table class="box lista">
+                <tr>
+                    <th colspan="3" class="local">
+                        Quarto 2
+                    </th>
+                </tr>
+                <tr>
+                    <td>Temperatura:</td>
+                    <td>O<sub>2</sub>:</td>
+                    <td>CO<sub>2</sub>:</td>
+                </tr>
+                <tr>
+                    <td>26.5 ºC</td>
+                    <td class="danger">25.5%</td>
+                    <td class="ok">0.05%</td>
+                </tr>
+            </table>
+
+<!--             <div class="lista box">
                 <h2>SALA</h2>
                 <h4 id="lista1-1">T: 23.0ºC</h4>
                 <h4 id="lista1-2">O2: 89%<br> OK</h4>
@@ -23,7 +135,7 @@
                 <div id = "temperatura"><input id="t" step="0.1" type="number" value="23.0" min="10" max="30">
                 <button class="favorite styled" type="button"> Alterar</button></div>
             </div>
-            <div id="lista2">
+            <div class="lista box">
                 <h2>COZINHA</h2>
                 <h4 id="lista2-1">T: 21.5ºC</h4>
                 <h4 id="lista2-2">O2: 93%<br> OK</h4>
@@ -31,7 +143,7 @@
                 <div id = "temperatura"><input id="t" step="0.1" type="number" value="21.5" min="10" max="30">
                 <button class="favorite styled" type="button"> Alterar</button></div>
             </div>
-            <div id="lista3">
+            <div class="lista box">
                 <h2>QUARTO PAIS</h2>
                 <h4 id="lista3-1">T: 24.5ºC</h4>
                 <h4 id="lista3-2">O2: 90% <br>OK</h4>
@@ -39,7 +151,7 @@
                 <div id = "temperatura"><input id="t" step="0.1" type="number" value="24.5" min="10" max="30">
                 <button class="favorite styled" type="button"> Alterar</button></div>
             </div>
-            <div id="lista4">
+            <div class="lista box">
                 <h2>QUARTO JOSÉ</h2>
                 <h4 id="lista4-1">T: 23.5ºC</h4>
                 <h4 id="lista4-2">O2: 72% <br>OK</h4>
@@ -47,14 +159,14 @@
                 <div id = "temperatura"><input id="t" step="0.1" type="number" value="23.5" min="10" max="30">
                 <button class="favorite styled" type="button"> Alterar</button></div>
             </div>
-            <div id="lista5">
+            <div class="lista box">
                 <h2>VARANDA</h2>
                 <h4 id="lista5-1">T: 28.3ºC</h4>
                 <h4 id="lista5-2">O2: 90% <br>OK</h4>
                 <h4 id="lista5-3">CO2: 7%<br> OK</h4>
                 <div id = "temperatura"><input id="t" step="0.1" type="number" value="28.3" min="10" max="30">
                 <button class="favorite styled" type="button"> Alterar</button></div>
-            </div>
+            </div> -->
         </main>
     </div>
 

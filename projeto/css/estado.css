@@ -1,4 +1,4 @@
-#app{
+/* #app{
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     border: solid;
@@ -30,19 +30,21 @@ header{
 }
 h1{
     margin-left: 50px;
-}
+} */
+
+/* 
+
 #temperatura{
     margin-top: -50px;
     margin-left: 5px;
-
 }
 #t{
     width: 50px;
 }
-#lista1-1, #lista2-1, #lista3-1, #lista4-1, #lista5-1{
+.lista{
     margin-top: -15px;
 }
-#lista1, #lista2, #lista3, #lista4, #lista5{
+.lista{
     display: grid;
     grid-template-columns: 33% 33% 33%;
     grid-template-rows: 40% 60%;
@@ -72,4 +74,30 @@ h2{
     background-color: rgb(255, 255, 255);
     border-bottom: solid;
     height: 250px;
+} */
+
+main {
+    height: 430px;
+}
+
+.lista {
+    height: 200px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.local {
+    font-size: 25px;
+}
+
+.ok {
+    color: green;
+}
+
+.danger {
+    color: red;
+}
+
+tr:nth-child(2) td {
+    text-decoration-line: underline;
 }

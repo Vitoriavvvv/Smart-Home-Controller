@@ -9,10 +9,10 @@ const item_count_per_page = 3;
 // sem precisar fazer alterações no index.html
 // o length de option_list têm de ser o múltiplo de item_count_per_page
 const option_list = [
-    {icon_class: "fa-solid fa-house", title: "Estado da Casa", link: "html/estado.html"},
+    {icon_class: "fa-solid fa-house", title: "Estados da Casa", link: "html/estado.html"},
     {icon_class: "fa-solid fa-list", title: "Funcionalidades", link: "html/Funcionalidades.html"},
     {icon_class: "fa-solid fa-bell", title: "Notificações", link: "html/lista_notificacoes.html"},
-    {icon_class: "#", title: "#", link: "#"},
+    {icon_class: "fa-solid fa-gear", title: "Configurações", link: "html/configuracoes.html"},
     {icon_class: "#", title: "#", link: "#"},
     {icon_class: "#", title: "#", link: "#"}
 ];

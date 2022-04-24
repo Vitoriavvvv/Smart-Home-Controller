@@ -16,7 +16,7 @@
   /* The slider */
   .slider {
     position: absolute;
-    cursor: pointer;
+/*     cursor: pointer; */
     top: 0;
     left: 0;
     right: 0;
@@ -24,8 +24,10 @@
     background-color: #ccc;
     -webkit-transition: .4s;
     transition: .4s;
+    border-radius: 34px;
   }
   
+  /* circle */
   .slider:before {
     position: absolute;
     content: "";
@@ -36,15 +38,16 @@
     background-color: white;
     -webkit-transition: .4s;
     transition: .4s;
+    border-radius: 50%;
   }
   
   input:checked + .slider {
     background-color: #2196F3;
   }
   
-  input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
-  }
+/*   input:focus + .slider {
+     box-shadow: 0 0 1px #2196F3; 
+  } */
   
   input:checked + .slider:before {
     -webkit-transform: translateX(26px);
@@ -53,15 +56,15 @@
   }
   
   /* Rounded sliders */
-  .slider.round {
+/*   .slider.round {
     border-radius: 34px;
-  }
-  
+  } */
+/*   
   .slider.round:before {
     border-radius: 50%;
-  }
+  } */
 
-  h1 {
+/*   h1 {
     text-align: center;
   }
 
@@ -71,7 +74,7 @@
 
   form {
     text-align: center;
-  }
+  } */
 
   .numbers {
     position: relative;
@@ -81,4 +84,60 @@
 
   .numbers input {
     text-align: center;
+  }
+
+  main {
+    display: flex;
+    justify-content: center;
+    height: 430px;
+  }
+
+  ul {
+    width: 360px;
+  }
+
+  li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    padding: 10px;
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid;
+  }
+  
+  li span:first-of-type {
+    font-size: 25px;
+  }
+
+  li span:last-of-type {
+    position: absolute;
+    right: 10px;
+  }
+
+  #addGadget {
+    margin-top: 140px;
+  }
+
+  input[type="number"] {
+    width: 40px;
+  }
+
+  li:nth-child(even) {
+    display: none;
+  }
+
+  li:nth-child(odd):hover + li,
+  li:nth-child(even):hover {
+    display: block;
+  }
+
+  li:nth-last-child(2) {
+    border-bottom: none;
+  }
+
+  li:last-child {
+    border-top: 1px solid;
+    border-bottom: none;
   }

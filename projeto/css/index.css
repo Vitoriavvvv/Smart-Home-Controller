@@ -28,7 +28,7 @@ header {
 .point {
     width: 20px;
     height: 20px;
-    background-color: aquamarine;
+    background-color: rgb(85, 26, 139);
     opacity: .7;
     float: left;
     margin: 0 10px;
@@ -38,7 +38,7 @@ header {
 .active,
 .point:hover {
     background-color: #fff;
-    border: 3px solid purple;
+    border: 3px solid rgb(85, 26, 139);
     box-sizing: border-box;
 }
 

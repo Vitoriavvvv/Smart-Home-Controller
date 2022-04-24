@@ -1,16 +1,3 @@
-#goBack {
-    font-size: 40px;
-}
-
-.title {
-    font-size: xx-large;
-    
-}
-
-header {
-    margin-right: 40px;
-}
-
 li {
     background-color: beige;
     margin-left: 30px;
@@ -25,19 +12,6 @@ li:hover {
 }
 
 #addGadget {
-    /* button style */
-    border-radius: 5px;
-    border-color: black;
-    border-width: 1px;
-    border: 3px solid rgb(95, 9, 95);
-    color: rgb(95, 9, 95);
-    transition-duration: 0.2s;
-
     /* button position */
     margin-top: 200px;
-}
-
-#addGadget:hover {
-    font-size: medium;
-    transition-duration: 0.2s;
 }
