@@ -19,14 +19,16 @@
         </header>
         <main>
             <ul>
-                <a href=""><li class="box" onclick="reset()">Restabelecer o Sistema</li></a>
+                <a href=""><li class="box" onclick="reset()">Restabelecer Sistema</li></a>
             </ul>
         </main>
     </div>
     <script>
         function reset() {
-            localStorage.clear();
-            alert('Restabelecer as pré-configurações com sucesso.');
+            if (confirm("Tem a certeza que quer restabelecer o sistema? Todos os dados vão ser perdidos.") == true) {
+                localStorage.clear();
+                alert('Restabelecer as pré-configurações com sucesso.');
+            }
         }
     </script>
 </body>
