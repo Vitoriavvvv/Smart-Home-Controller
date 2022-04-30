@@ -9,6 +9,7 @@
 </head>
 <body>
     <div id="app">
+        <div id="top-bar"></div>
         <header>
             <a href="#">
                 <div id="user">
@@ -22,21 +23,40 @@
             </a>
         </header>
 
+        <div id="weather-wrapper">
+            <div>
+                <i class="fa-solid fa-sun sun"></i>
+            </div>
+            <div class="details">
+                <div id="description">Faz Sol · Agradável</div>
+                <div id="temperature">25ºC</div>    
+            </div>
+        </div>
+
+        <div>
+            <i class="fa-solid fa-angles-down down" onclick="showMenuFirst()"></i>
+        </div>
+
         <main>
             <a href="html/estado.html">
-                <div class="box menu-box">
-                    <i class="fa-solid fa-house menu-icon"></i>Estados da Casa
-                </div>
+                <i class='fa-solid fa-house menu-icon'></i>
+                <div class="box menu-box">Estados da Casa</div>
+            </a>
+            <a href="html/limpeza.html">
+                <i class='fa-solid fa-broom menu-icon'></i>
+                <div class="box menu-box">Limpeza de Casa</div>
             </a>
             <a href="html/Funcionalidades.html">
-                <div class="box menu-box">
-                    <i class="fa-solid fa-list menu-icon"></i>Funcionalidades
-                </div>
+                <i class='fa-solid fa-list menu-icon'></i>
+                <div class="box menu-box">Funcionalidades</div>
             </a>
             <a href="html/lista_notificacoes.html">
-                <div class="box menu-box">
-                    <i class="fa-solid fa-bell menu-icon"></i>Notificações
-                </div>
+                <i class='fa-solid fa-bell menu-icon'></i>
+                <div class="box menu-box">Alertas e Segurança</div>
+            </a>
+            <a href="html/configuracoes.html">
+                <i class='fa-solid fa-gear menu-icon'></i>
+                <div class="box menu-box">Configurações</div>
             </a>
         </main>
         

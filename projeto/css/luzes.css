@@ -3,16 +3,14 @@ main {
     justify-content: center;
   }
 
-  ul {
-    width: 360px;
-  }
 
   li {
     font-size: 20px;
-    height: 50px;
-    line-height: 50px;
+    height: 68px;
+    line-height: 68px;
     padding: 10px;
     border-bottom: 1px solid;
+    width: 350px;
   }
 
   li:last-child {
@@ -26,4 +24,8 @@ main {
 
   li span:last-of-type {
     float: right;
+  }
+
+  .box {
+    width: 400px;
   }

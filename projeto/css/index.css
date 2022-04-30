@@ -1,12 +1,16 @@
 header {
     height: 50px;
-    background-color: azure;
+    background-color: rgba(31, 134, 134, 0.11);
     line-height: 50px;
 }
 
 #user, #help {
-    width: 200px;
+    width: 250px;
     float: left;
+}
+
+#app {
+    position: relative;
 }
 
 #help {
@@ -15,19 +19,27 @@ header {
 }
 
 .menu-box {
-    height: 100px;
-    line-height: 100px;
-    margin: 50px auto;
-    font-size: 25px;
+    height: 60px;
+    line-height: 60px;
+    margin: 10px auto;
+    font-size: 22px;
+}
+
+a:first-of-type .menu-box {
+    margin-top: 15px;
+}
+
+a:last-of-type .menu-box {
+    margin-bottom: 18px;
 }
 
 .box:hover {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 8px 5px rgba(0, 0, 0, 0.2);
 }
 
 .point {
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     background-color: rgb(85, 26, 139);
     opacity: .7;
     float: left;
@@ -37,11 +49,96 @@ header {
 
 .active,
 .point:hover {
-    background-color: #fff;
-    border: 3px solid rgb(85, 26, 139);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 2px solid rgb(85, 26, 139);
     box-sizing: border-box;
 }
 
 .menu-icon {
     font-size: 30px;
+    margin-top: 8px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    height: 30px;
+    width: 500px;
+    align-items: center;
+    background-image: url('../imgs/app.jpg');
+    background-position: bottom;
+}
+
+#weather-wrapper {
+    margin-top: 30px;
+}
+
+#temperature {
+    display: inline-block;
+    font-size: 80px;
+    color: rgba(179, 100, 26, 0.568);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.sun {
+    font-size: 90px;
+    color: rgba(255, 166, 2, 0.767);
+    margin-top: 50px;
+    margin-bottom: 15px;
+}
+
+#description {
+    margin-top: 12px;
+    color: rgba(110, 47, 5, 0.877);
+}
+
+#weather-wrapper > div {
+/*     display: inline-block; */
+}
+
+main {
+    margin-top: 373px;
+}
+
+header, main {
+    opacity: 0;
+}
+
+.down {
+    margin-top: 30px;
+    font-size: 80px;
+    color: rgba(214, 227, 238, 0.295);
+    animation: down 1s alternate infinite;
+}
+
+.down:hover {
+    animation: goDown 2s;
+}
+
+@keyframes down {
+    0% {color: rgba(34, 233, 233, 0.7);}
+    50% {color: rgba(114, 233, 233, 0.7);}
+    100% {color: rgba(188, 247, 247, 0.7);}
+}
+
+@keyframes goDown {
+    0% {margin-top: 30px}
+    100% {margin-top: 150px;}
+}
+
+@keyframes goUp {
+    0% {margin-top: 373px;
+        opacity: 0;}
+    100% {margin-top: 15px;
+        opacity: 1;}
+}
+
+@keyframes show {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+
+::-webkit-scrollbar {
+    display: none; 
 }

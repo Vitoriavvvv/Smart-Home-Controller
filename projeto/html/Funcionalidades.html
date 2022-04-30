@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <title>Funcionalidades</title>
     <link rel="stylesheet" href="../css/comum.css">
-    <link rel="stylesheet" href="../css/Funcionalidades.css">
+    <link rel="stylesheet" href="../css/Funcionalidades.css">    
     <link rel="stylesheet" href="../fa/css/all.css">
 </head>
 
 <body>
     <div id="app">
+        <div id="top-bar"></div>
         <header>
             <div class="title-wrapper">
                 <a href="../index.html">
@@ -20,29 +21,31 @@
         </header>
 
         <main>
-            <ul class="gadgets">
-                <a href="luzes.html">
-                    <li>Luzes</li>
-                </a>
-                <a href="regador.html">
-                    <li>Regador</li>
-                </a>
-                <a href="ac.html">
-                    <li>Ar Condicionado</li>
-                </a>
-                <a href="#">
-                    <li>TV</li>
-                </a>
-            </ul>
+            <a href="luzes.html">
+                <i class="fa-solid fa-lightbulb menu-icon"></i>
+                <div class="box menu-box">Luzes</div>
+            </a>
+            <a href="regador.html">
+                <i class="fa-solid fa-droplet menu-icon"></i>
+                <div class="box menu-box">Regador</div>
+            </a>
+            <a href="ac.html">
+                <i class="fa-solid fa-temperature-full menu-icon"></i>
+                <div class="box menu-box">Ar Condicionado</div>
+            </a>
+            <a href="#">
+                <i class="fa-solid fa-tv menu-icon"></i>
+                <div class="box menu-box">TV</div>
+            </a>
         </main>
 
-        <footer>
+<!--         <footer>
             <div>
                 <a href="#">
                     <button id="addGadget">Adicionar Dispositivo <i class="fa fa-plus"></i></button>
                 </a>
             </div>
-        </footer>
+        </footer> -->
     </div>
 
     <form name="activateAlert" action="./alerta_intruso.html"></form>

@@ -30,7 +30,8 @@ function constructListNotifs() {
 }
 
 function deleteNotifs () {
-    if (localStorage.getItem("intruderRecords") == null) {
+    const records = JSON.parse(localStorage.getItem("intruderRecords"));
+    if (records == null || records.length == 0) {
         alert("Não há notificações para remover.");
     } else {
         if (confirm("Quer remover todas as notificações de intruso?") == true) {

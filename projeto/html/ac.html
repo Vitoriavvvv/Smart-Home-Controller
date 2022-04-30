@@ -10,6 +10,7 @@
 <body>
 
   <div id="app">
+    <div id="top-bar"></div>
     <header>
         <div class="title-wrapper">
             <a href="./Funcionalidades.html">
@@ -20,89 +21,86 @@
     </header>
 
     <main>
-      <ul>
+      <ul class="box">
         <li>
-          <span>Entrada</span>
+          <span>Casa de Banho</span>
           <span>
               off<div class="onOffBox" onclick="switchOnOff(event, 0)">
                   <div class="onOffCircle"></div>
               </div>on
           </span>
+          <div class="temp">
+              <label for="">Temperatura:&nbsp;</label>
+              <input type="number" max="40" min="-20">
+              <label for="">&nbsp;ºC</label>
+          </div>
         </li>
         <li>
-            <label for="">Temperatura:&nbsp;</label>
-            <input type="number" max="40" min="-20">
-            <label for="">&nbsp;ºC</label>
-        </li>
-
-        <li>
-          <span>Sala</span>
+          <span>Cozinha</span>
           <span>
               off<div class="onOffBox" onclick="switchOnOff(event, 1)">
                   <div class="onOffCircle"></div>
               </div>on
           </span>
+          <div class="temp">
+              <label for="">Temperatura:&nbsp;</label>
+              <input type="number" max="40" min="-20">
+              <label for="">&nbsp;ºC</label>
+          </div>
         </li>
         <li>
-            <label for="">Temperatura:&nbsp;</label>
-            <input type="number" max="40" min="-20">
-            <label for="">&nbsp;ºC</label>
-        </li>
-
-        <li>
-          <span>Cozinha</span>
+          <span>Entrada</span>
           <span>
               off<div class="onOffBox" onclick="switchOnOff(event, 2)">
                   <div class="onOffCircle"></div>
               </div>on
           </span>
+          <div class="temp">
+              <label for="">Temperatura:&nbsp;</label>
+              <input type="number" max="40" min="-20">
+              <label for="">&nbsp;ºC</label>
+          </div>
         </li>
         <li>
-            <label for="">Temperatura:&nbsp;</label>
-            <input type="number" max="40" min="-20">
-            <label for="">&nbsp;ºC</label>
-        </li>
-
-        <li>
-          <span>Casa de Banho</span>
+          <span>Quarto 1</span>
           <span>
               off<div class="onOffBox" onclick="switchOnOff(event, 3)">
                   <div class="onOffCircle"></div>
               </div>on
           </span>
-        </li>
-        <li>
-            <label for="">Temperatura:&nbsp;</label>
-            <input type="number" max="40" min="-20">
-            <label for="">&nbsp;ºC</label>
-        </li>
-
-        <li>
-          <span>Quarto 1</span>
-          <span>
-              off<div class="onOffBox" onclick="switchOnOff(event, 4)">
-                  <div class="onOffCircle"></div>
-              </div>on
-          </span>
-        </li>
-        <li>
-            <label for="">Temperatura:&nbsp;</label>
-            <input type="number" max="40" min="-20">
-            <label for="">&nbsp;ºC</label>
+          <div class="temp">
+              <label for="">Temperatura:&nbsp;</label>
+              <input type="number" max="40" min="-20">
+              <label for="">&nbsp;ºC</label>
+          </div>
         </li>
 
         <li>
           <span>Quarto 2</span>
           <span>
+              off<div class="onOffBox" onclick="switchOnOff(event, 4)">
+                  <div class="onOffCircle"></div>
+              </div>on
+          </span>
+          <div class="temp">
+              <label for="">Temperatura:&nbsp;</label>
+              <input type="number" max="40" min="-20">
+              <label for="">&nbsp;ºC</label>
+          </div>
+        </li>
+        
+        <li>
+          <span>Sala</span>
+          <span>
               off<div class="onOffBox" onclick="switchOnOff(event, 5)">
                   <div class="onOffCircle"></div>
               </div>on
           </span>
-        </li>
-        <li>
-            <label for="">Temperatura:&nbsp;</label>
-            <input type="number" max="40" min="-20">
-            <label for="">&nbsp;ºC</label>
+          <div class="temp">
+              <label for="">Temperatura:&nbsp;</label>
+              <input type="number" max="40" min="-20">
+              <label for="">&nbsp;ºC</label>
+          </div>
         </li>
       </ul>
     </main>

@@ -9,6 +9,7 @@
 </head>
 <body>
     <div id="app">
+        <div id="top-bar"></div>
         <header>
             <div class="title-wrapper">
                 <a href="../index.html">
@@ -29,7 +30,7 @@
 
     <script>
         function reset() {
-            if (confirm("Tem a certeza que quer restabelecer o sistema? Todos os dados vão ser perdidos.") == true) {
+            if (confirm("Tem a certeza que quer restabelecer o sistema?\nAtenção: Todos os dados serão perdidos!") == true) {
                 localStorage.clear();
                 alert('Restabelecer as pré-configurações com sucesso.');
             }

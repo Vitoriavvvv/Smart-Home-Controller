@@ -76,18 +76,14 @@ h2{
     height: 250px;
 } */
 
-main {
-    height: 430px;
-}
-
-.lista {
-    height: 200px;
-    margin-bottom: 20px;
-    padding: 20px;
+.box {
+    width: 400px;
+    margin-top: 50px;
 }
 
 .local {
-    font-size: 25px;
+    font-size: 30px;
+    padding: 40px 0;
 }
 
 .ok {
@@ -98,6 +94,20 @@ main {
     color: red;
 }
 
+td {
+    text-align: right;
+    padding: 20px;
+}
+
 tr:nth-child(2) td {
-    text-decoration-line: underline;
+    padding-top: 0;
+}
+
+tr:last-of-type td {
+    padding-bottom: 50px;
+}
+
+tr td:first-child {
+    text-decoration: underline;
+    font-size: 20px;
 }

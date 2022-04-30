@@ -6,23 +6,24 @@
     <link rel="stylesheet" href="../css/comum.css">
     <link rel="stylesheet" href="../fa/css/all.css">
     <style>
-        main {
-           width: 350px;
-           height: 430px;
-           margin: 0 auto;
+        .help {
+           width: 400px;
+           height: 480px;
+           background-color: rgba(250, 248, 229, 0.555);
         }
 
         li:nth-child(even) {
             font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
 
-        h2 {
+        h3 {
             margin-top: 0;
         }
     </style>
 </head>
 <body>
     <div id="app">
+        <div id="top-bar"></div>
         <header>
             <div class="title-wrapper">
                 <a href="../index.html">
@@ -33,23 +34,29 @@
         </header>
 
         <main>
-             <h2>Neste protótipo estão disponibilizadas as seguintes funções:</h2> 
-             <ul>
-                 <li>1. Consulta de estados da casa:</li>
-                 <li>Menu Principal -> Estados da Casa</li>
-                 <li>2. Controlos de iluninação:</li>
-                 <li>Menu Principal -> Funcionalidades -> Luzes</li>
-                 <li>3. Ajustar os horários de rega automática:</li>
-                 <li>Menu Principal -> Funcionalidades -> Regador</li>
-                 <li>4. Definir as temperaturas dos ares condicionados em vários locais da casa:</li>
-                 <li>Menu Principal -> Funcionalidades -> Ar Condicionado</li>
-                 <li>5. Ativar a alerta de intruso:</li>
-                 <li>Menu Principal -> Notificações, clique em "Emergência", vai aparecer um botão ao lado do "Intruso", clique-o. A desativação é feita da mesma maneira.</li>
-                 <li>6. Consulta e gestão de lista de notificações de intruso:</li>
-                 <li>Menu Principal -> Notificações -> Emergência -> Intruso</li>
-                 <li>7. Restabelecer as pré-configurações do sistema.</li>
-                 <li>Menu Principal (clique no segundo ponto abaixo) -> Configurações -> Restabelecer Sistema</li>
-             </ul>
+            <div class="scroll">
+                <h3>Neste protótipo estão disponibilizadas as seguintes funções:</h3> 
+                <ul>
+                    <li>1. Consulta de estados da casa:</li>
+                    <li>Menu Principal -> Estados da Casa</li>
+                    <li>2. Fazer limpeza de casa:</li>
+                    <li>Menu Principal -> Limpesa de Casa, selecione as opções e clique em começar.</li>
+                    <li>3. Consultar os processos de limpeza:</li>
+                    <li>Depois de começar a limpeza, vai aparecer uma etiqueta "Consultar Processo" abaixo do título da interface corrente, clique-a.</li>
+                    <li>4. Controlos de iluninação:</li>
+                    <li>Menu Principal -> Funcionalidades -> Luzes</li>
+                    <li>5. Ajustar os horários de rega automática:</li>
+                    <li>Menu Principal -> Funcionalidades -> Regador</li>
+                    <li>6. Definir as temperaturas dos ares condicionados em vários locais da casa:</li>
+                    <li>Menu Principal -> Funcionalidades -> Ar Condicionado</li>
+                    <li>7. Ativar a alerta de intruso:</li>
+                    <li>Menu Principal -> Alertas e Segurança -> Botão de Intruso</li>
+                    <li>8. Consulta e gestão de histórico de notificações de intruso:</li>
+                    <li>Menu Principal -> Alertas e Segurança -> Intruso(Ver o histórico)</li>
+                    <li>9. Restabelecer as pré-configurações do sistema.</li>
+                    <li>Menu Principal -> Configurações -> Restabelecer Sistema</li>
+                </ul>
+            </div>
         </main>
     </div>
 

@@ -15,11 +15,6 @@
     transition-duration: 0.2s;
 }
 
-.finish {
-    position: absolute;
-    top: 540px;
-}
-
 .regaAuto {
     text-align: left;
     margin-left: 50px;
@@ -74,28 +69,18 @@ input:checked[type=checkbox]:before {
     padding-left: 60px;
 }
 
-.hide-list {
-    display: none;
-}
-
-.lista-regadores a:focus + .hide-list,
-.hide-list:hover {
-    display: block;
-}
-
-main::-webkit-scrollbar {
-    display: none;
-}
-
 li {
-    background-color: beige;
-    margin-left: 30px;
-    margin-right: 30px;
-    margin-top: 10px;
+    background-color: rgba(250, 248, 229, 0.555);
+    width: 350px;
+    margin: 10px auto;
+}
+
+li:first-child {
+    margin-top: 0;
 }
 
 .lista-regadores a li:hover {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 8px 5px rgba(0, 0, 0, 0.2);
     transition-duration: 0.2s;
 }
 
@@ -116,14 +101,8 @@ li span {
 }
 
 .removeHour {
-    display: none;
     background-color: #fff;
     margin-top: 0;
-}
-
-.hide-list li:hover + .removeHour,
-.removeHour:hover {
-    display: block;
 }
 
 .removeHour:hover {
@@ -131,9 +110,24 @@ li span {
 }
 
 main {
-    height: 380px;
+    height: 510px;
 }
 
 .noHourInfo {
     font-weight: lighter;
 }
+
+.hide-list li {
+    background-color: rgba(240, 240, 235, 0.555);
+}
+
+.delete {
+    font-size: 18px;
+}
+
+.scroll {
+    background-color: transparent;
+    width: 400px;
+    padding: 0;
+}
+

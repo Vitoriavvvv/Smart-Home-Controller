@@ -5,6 +5,7 @@
 
 i {
     margin: 0;
+    margin-top: 50px;
 }
 
 header {
@@ -14,6 +15,7 @@ header {
 
 #alerta {
     margin: 0 10px;
+    margin-top: 50px;
     font-size: 60px;
 }
 
@@ -33,6 +35,7 @@ header {
 
 #local {
     font-size: 30px;
+    margin-top: 20px;
 }
 
 .alert-icon {
@@ -45,33 +48,37 @@ footer {
 }
 
 .horizontal-separator {
-    width: 360px;
+    width: 450px;
     height: 2px;
     background-color: rgb(138, 4, 4);
-    margin-top: 30px;
-    margin-left: 20px;
-}
-
-#option-wrapper {
-    height: 186px;
+    margin: 20px auto;
 }
 
 #call-wrapper, #cancel-wrapper {
-    width: 199px;
-    height: 186px;
+    width: 200px;
+    height: 200px;
     float: left;
+}
+
+#call-wrapper {
+    margin-left: 28px;
 }
 
 .vertical-separator {
     width: 2px;
-    height: 150px;
+    height: 180px;
     background-color: rgb(138, 4, 4);
-    margin-top: 18px;
-    float: left;
+    position: absolute;
+    bottom: -210px;
+    left: 250px;
+}
+
+#cancel-wrapper {
+    margin-left: 20px;
 }
 
 #call {
-    padding: 26px;
+    margin-top: -10px;
 }
 
 .call-icon {
@@ -85,8 +92,8 @@ footer {
 
 .cancel-icon {
     font-size: 100px;
-    margin-top: 40px;
-    margin-left: 70px;
+    margin-top: 50px;
+    margin-left: 95px;
 }
 
 #cancel-alert {
@@ -98,9 +105,13 @@ footer {
     height: 180px;
     background-color: rgba(255, 255, 255, 0.3);
     position: absolute;
-    margin-top: 3px;
+    margin-top: 10px;
     margin-left: 4px;
     display: none;
+}
+
+#choose-cancel {
+    margin-left: 30px;
 }
 
 #call-wrapper:hover #choose-call, 

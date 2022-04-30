@@ -1,0 +1,41 @@
+#title {
+    font-size: 38px;
+    margin-left: 50px;
+}
+
+.scroll {
+    background-color: transparent;
+    padding-top: 0;
+}
+
+.process-bar {
+    height: 20px;
+    width: 360px;
+    background-color: aliceblue;
+    border-radius: 20px;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+p:first-of-type {
+    margin-top: 0;
+}
+
+.inside-bar {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    height: 14px;
+    background-color: rgba(78, 35, 119, .8);
+    border-radius: 20px;
+}
+
+@keyframes process {
+    from {width: 0;}
+    to {width: 354px;}
+}
+

@@ -10,6 +10,7 @@
 
 <body>
     <div id="app">
+        <div id="top-bar"></div>
         <header>
             <div class="title-wrapper">
                 <a href="../html/Funcionalidades.html">
@@ -20,99 +21,100 @@
         </header>
 
         <main>
-            <ul class="lista-regadores">
-                <a href="#"><li>Varanda<i class="fa-solid fa-plus addHour"></i></li></a>
-                <ul class="hide-list"></ul>
-<!--                    <li>
-                        <form class="horário" action="#">
-                            <input type="text" id="horas">
-                            <label for="horas-minutos">:</label>
-                            <input type="text" id="minutos">
-                            <label for="minutos"></label>
-                            
-                            <label for="off" class="button">off</label>
-                            <input type="checkbox">
-                            <label for="on">on</label>
-
-                            <label for="">Horário 1:</label>
-                            <input type="time">
-                            <span>
-                                off<div class="onOffBox" onclick="switchOnOff(event, 0)">
-                                    <div class="onOffCircle"></div>
-                                </div>on
-                            </span> 
-                        </form>
-                    </li>
-                    <li class="removeHour">Remove Horário</li>
-
-                    <li>
-                        <form class="horário" action="#">
-                            <input type="text" id="horas">
-                            <label for="horas-minutos">:</label>
-                            <input type="text" id="minutos">
-                            <label for="minutos"></label>
-
-                            <label for="off" class="button">off</label>
-                            <input type="checkbox">
-                            <label for="on">on</label>
-                        </form>
-                    </li>
-
-                    <li>
-                        <form class="horário" action="#">
-                            <input type="text" id="horas">
-                            <label for="horas-minutos">:</label>
-                            <input type="text" id="minutos">
-                            <label for="minutos"></label>
-
-                            <label for="off" class="button">off</label>
-                            <input type="checkbox">
-                            <label for="on">on</label>
-                        </form>
-                    </li> -->
-                <a href="#"><li>Cozinha<i class="fa-solid fa-plus addHour"></i></li></a>
-                <ul class="hide-list"></ul>
-                    <!-- <li>
-                        <form class="horário" action="#">
-                            <input type="text" id="horas">
-                            <label for="horas-minutos">:</label>
-                            <input type="text" id="minutos">
-                            <label for="minutos"></label>
-
-                            <label for="off" class="button">off</label>
-                            <input type="checkbox">
-                            <label for="on">on</label>
-                        </form>
-                    </li>
-
-                    <li>
-                        <form class="horário" action="#">
-                            <input type="text" id="horas">
-                            <label for="horas-minutos">:</label>
-                            <input type="text" id="minutos">
-                            <label for="minutos"></label>
-
-                            <label for="off" class="button">off</label>
-                            <input type="checkbox">
-                            <label for="on">on</label>
-                        </form>
-                    </li>
-
-                    <li>
-                        <form class="horário" action="#">
-                            <input type="text" id="horas">
-                            <label for="horas-minutos">:</label>
-                            <input type="text" id="minutos">
-                            <label for="minutos"></label>
-
-                            <label for="off" class="button">off</label>
-                            <input type="checkbox">
-                            <label for="on">on</label>
-                        </form>
-                    </li> -->
-            </ul>
+            <div class="scroll">
+                <ul class="lista-regadores">
+                    <a href="#"><li>Cozinha<i class="fa-solid fa-plus addHour"></i></li></a>
+                    <ul class="hide-list"></ul>
+    <!--                    <li>
+                            <form class="horário" action="#">
+                                <input type="text" id="horas">
+                                <label for="horas-minutos">:</label>
+                                <input type="text" id="minutos">
+                                <label for="minutos"></label>
+                                
+                                <label for="off" class="button">off</label>
+                                <input type="checkbox">
+                                <label for="on">on</label>
+    
+                                <label for="">Horário 1:</label>
+                                <input type="time">
+                                <span>
+                                    off<div class="onOffBox" onclick="switchOnOff(event, 0)">
+                                        <div class="onOffCircle"></div>
+                                    </div>on
+                                </span> 
+                            </form>
+                        </li>
+                        <li class="removeHour">Remove Horário</li>
+    
+                        <li>
+                            <form class="horário" action="#">
+                                <input type="text" id="horas">
+                                <label for="horas-minutos">:</label>
+                                <input type="text" id="minutos">
+                                <label for="minutos"></label>
+    
+                                <label for="off" class="button">off</label>
+                                <input type="checkbox">
+                                <label for="on">on</label>
+                            </form>
+                        </li>
+    
+                        <li>
+                            <form class="horário" action="#">
+                                <input type="text" id="horas">
+                                <label for="horas-minutos">:</label>
+                                <input type="text" id="minutos">
+                                <label for="minutos"></label>
+    
+                                <label for="off" class="button">off</label>
+                                <input type="checkbox">
+                                <label for="on">on</label>
+                            </form>
+                        </li> -->
+                    <a href="#"><li>Varanda<i class="fa-solid fa-plus addHour"></i></li></a>
+                    <ul class="hide-list"></ul>
+                        <!-- <li>
+                            <form class="horário" action="#">
+                                <input type="text" id="horas">
+                                <label for="horas-minutos">:</label>
+                                <input type="text" id="minutos">
+                                <label for="minutos"></label>
+    
+                                <label for="off" class="button">off</label>
+                                <input type="checkbox">
+                                <label for="on">on</label>
+                            </form>
+                        </li>
+    
+                        <li>
+                            <form class="horário" action="#">
+                                <input type="text" id="horas">
+                                <label for="horas-minutos">:</label>
+                                <input type="text" id="minutos">
+                                <label for="minutos"></label>
+    
+                                <label for="off" class="button">off</label>
+                                <input type="checkbox">
+                                <label for="on">on</label>
+                            </form>
+                        </li>
+    
+                        <li>
+                            <form class="horário" action="#">
+                                <input type="text" id="horas">
+                                <label for="horas-minutos">:</label>
+                                <input type="text" id="minutos">
+                                <label for="minutos"></label>
+    
+                                <label for="off" class="button">off</label>
+                                <input type="checkbox">
+                                <label for="on">on</label>
+                            </form>
+                        </li> -->
+                </ul>
+            </div>
         </main>
-
         <footer>
             <div class="finish">
                 <a href="#">
@@ -120,7 +122,6 @@
                 </a>
             </div>
         </footer>
-    </div>
 
     <form name="activateAlert" action="./alerta_intruso.html"></form>
     <script src="../js/alerta_comum.js"></script>

@@ -11,6 +11,7 @@
 
 <body>
     <div id="app">
+        <div id="top-bar"></div>
         <header>
             <div class="title-wrapper">
                 <a href="../index.html">
@@ -20,58 +21,18 @@
             </div>
         </header>
         <main>
-            <table class="box lista">
-                <tr>
-                    <th colspan="3" class="local">
-                        Entrada
-                    </th>
-                </tr>
-                <tr>
-                    <td>Temperatura:</td>
-                    <td>O<sub>2</sub>:</td>
-                    <td>CO<sub>2</sub>:</td>
-                </tr>
-                <tr>
-                    <td>23.5 ºC</td>
-                    <td class="ok">21.0%</td>
-                    <td class="ok">0.04%</td>
-                </tr>
-            </table>
-            <table class="box lista">
-                <tr>
-                    <th colspan="3" class="local">
-                        Sala
-                    </th>
-                </tr>
-                <tr>
-                    <td>Temperatura:</td>
-                    <td>O<sub>2</sub>:</td>
-                    <td>CO<sub>2</sub>:</td>
-                </tr>
-                <tr>
-                    <td>23.0 ºC</td>
-                    <td class="ok">20.8%</td>
-                    <td class="ok">0.10%</td>
-                </tr>
-            </table>
 
-            <table class="box lista">
-                <tr>
-                    <th colspan="3" class="local">
-                        Cozinha
-                    </th>
-                </tr>
-                <tr>
-                    <td>Temperatura:</td>
-                    <td>O<sub>2</sub>:</td>
-                    <td>CO<sub>2</sub>:</td>
-                </tr>
-                <tr>
-                    <td>21.5 ºC</td>
-                    <td class="danger">15.6%</td>
-                    <td class="danger">1.56%</td>
-                </tr>
-            </table>
+            <form action="">
+                <label for="locals">Seleciona o local:&nbsp;</label>
+                <select id="locals" onchange="changeLocal()">
+                    <option name="local" value="Casa de Banho" selected>Casa de Banho</option>
+                    <option name="local" value="Cozinha">Cozinha</option>
+                    <option name="local" value="Entrada">Entrada</option>
+                    <option name="local" value="Quarto 1">Quarto 1</option>
+                    <option name="local" value="Quarto 2">Quarto 2</option>
+                    <option name="local" value="Sala">Sala</option>
+                </select>
+            </form>
 
             <table class="box lista">
                 <tr>
@@ -81,49 +42,28 @@
                 </tr>
                 <tr>
                     <td>Temperatura:</td>
-                    <td>O<sub>2</sub>:</td>
-                    <td>CO<sub>2</sub>:</td>
+                    <td class="ok">24.5 ºC</td>
+                    <td></td>                   
                 </tr>
                 <tr>
-                    <td>24.5 ºC</td>
-                    <td class="ok">22.2%</td>
-                    <td class="ok">0.20%</td>
-                </tr>
-            </table>
-
-            <table class="box lista">
-                <tr>
-                    <th colspan="3" class="local">
-                        Quarto 1
-                    </th>
+                    <td>Iluminação:</td>
+                    <td class="ok">70 %</td>
+                    <td></td>                   
                 </tr>
                 <tr>
-                    <td>Temperatura:</td>
-                    <td>O<sub>2</sub>:</td>
-                    <td>CO<sub>2</sub>:</td>
+                    <td>Humidade:</td>
+                    <td class="danger">80 %</td>
+                    <td></td>
                 </tr>
                 <tr>
-                    <td>28.3 ºC</td>
-                    <td class="ok">20.1%</td>
-                    <td class="danger">1.11%</td>
-                </tr>
-            </table>
-
-            <table class="box lista">
-                <tr>
-                    <th colspan="3" class="local">
-                        Quarto 2
-                    </th>
+                    <td>Nível de O<sub>2</sub>:</td>
+                    <td class="ok">22.2 %</td>
+                    <td></td>
                 </tr>
                 <tr>
-                    <td>Temperatura:</td>
-                    <td>O<sub>2</sub>:</td>
-                    <td>CO<sub>2</sub>:</td>
-                </tr>
-                <tr>
-                    <td>26.5 ºC</td>
-                    <td class="danger">25.5%</td>
-                    <td class="ok">0.05%</td>
+                    <td>Nível de CO<sub>2</sub>:</td>
+                    <td class="ok">0.20 %</td>
+                    <td></td>
                 </tr>
             </table>
 
@@ -172,6 +112,65 @@
 
     <form name="activateAlert" action="./alerta_intruso.html"></form>
     <script src="../js/alerta_comum.js"></script>
+
+    <script>
+        const statistics = [
+             {local: "Casa de Banho", temp: "24.5 ºC", ilum: "70 %", hum: "80 %", oxyg: "22.2 %", carbon: "0.20 %",
+             classList: ["ok", "ok","danger", "ok", "ok"]},
+             {local: "Cozinha", temp: "21.5 ºC", ilum: "89 %", hum: "65 %", oxyg: "15.6 %", carbon: "1.56 %",
+             classList: ["ok", "ok","danger", "danger", "danger"]},
+             {local: "Entrada", temp: "23.5 ºC", ilum: "60 %", hum: "55 %", oxyg: "21.0 %", carbon: "0.04 %",
+             classList: ["ok", "ok", "ok", "ok", "ok"]},
+             {local: "Quarto 1", temp: "28.3 ºC", ilum: "45 %", hum: "30 %", oxyg: "20.1 %", carbon: "1.11 %",
+             classList: ["ok", "ok", "danger", "ok", "danger"]},
+             {local: "Quarto 2", temp: "26.5 ºC", ilum: "88 %", hum: "45 %", oxyg: "25.5 %", carbon: "0.05 %",
+             classList: ["ok", "ok","ok", "danger", "ok"]},
+             {local: "Sala", temp: "23.0 ºC", ilum: "90 %", hum: "50 %", oxyg: "20.8 %", carbon: "0.10 %",
+             classList: ["ok", "ok","ok", "ok", "ok"]},
+        ];
+
+        function changeLocal() {
+            var options = document.getElementsByTagName("option");
+            var index = 0
+            for (; index < options.length && !options[index].selected; index++) {}
+            for (var i = 0; i < statistics.length; i++) {
+                if (statistics[i].local == options[index].value) {
+                    var trs = document.getElementsByClassName("lista")[0].getElementsByTagName("tr");
+                    trs[0].children[0].innerHTML = statistics[i].local;
+                    var currElem = trs[1].children[1];
+                    currElem.innerHTML = statistics[i].temp;
+                    if (!currElem.classList.contains(statistics[i].classList[0])) {
+                        currElem.classList.replace(currElem.classList[0], statistics[i].classList[0]);
+                    }
+
+                    currElem = trs[2].children[1];
+                    currElem.innerHTML = statistics[i].ilum;
+                    if (!currElem.classList.contains(statistics[i].classList[1])) {
+                        currElem.classList.replace(currElem.classList[0], statistics[i].classList[1]);
+                    }
+
+                    currElem = trs[3].children[1];
+                    currElem.innerHTML = statistics[i].hum;
+                    if (!currElem.classList.contains(statistics[i].classList[2])) {
+                        currElem.classList.replace(currElem.classList[0], statistics[i].classList[2]);
+                    }
+
+                    currElem = trs[4].children[1];
+                    currElem.innerHTML = statistics[i].oxyg;
+                    if (!currElem.classList.contains(statistics[i].classList[3])) {
+                        currElem.classList.replace(currElem.classList[0], statistics[i].classList[3]);
+                    }
+
+                    currElem = trs[5].children[1];
+                    currElem.innerHTML = statistics[i].carbon;
+                    if (!currElem.classList.contains(statistics[i].classList[4])) {
+                        currElem.classList.replace(currElem.classList[0], statistics[i].classList[4]);
+                    }
+                    break;
+                }
+            }
+        }
+    </script>
 </body>
 
 </html>

@@ -1,25 +1,6 @@
-main {
-    overflow-y: scroll;
-}
-
-main::-webkit-scrollbar {
-    display: none;
-}
-
-#lista-notificacoes li:hover,
-#lista-notificacoes a:hover {
+#lista-notificacoes a:hover li {
     background-color: purple;
     color: aliceblue;
-}
-
-.hidden-list {
-    display: none;
-    background-color: #fff;
-}
-
-#lista-notificacoes a:focus + .hidden-list,
-.hidden-list:hover {
-    display: block;
 }
 
 .onOffButton {
@@ -27,10 +8,23 @@ main::-webkit-scrollbar {
     float: right;
 }
 
-.hidden-list li {
+#lista-notificacoes li span {
+    float: left;
+}
+
+#lista-notificacoes li {
     text-align: right;
 }
 
-.hidden-list span {
-    float: left;
+#lista-notificacoes a li {
+    text-align: center;
+    background-color: rgba(239, 247, 255, 0.39);
+}
+
+#title {
+    margin-left: 50px;
+}
+
+.box {
+    width: 400px;
 }

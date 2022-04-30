@@ -19,3 +19,11 @@ Se quiser modificar as informações dos blocos, ir ao "js/index.js"
 4. Ajustar o tempo de intervalo entre 2 alertas, ir ao "js/lista_notificacoes.js"
 
 5. Mudar ou adicionar mais categorias de norificacão, ir ao "js/lista_notificacoes.js"
+
+==============={ Atualizações após TP9 }============
+
+1. Foram descartados os efeitos hover desnecessários, em "css/luzes.css" e "css/ac.css"
+
+2. Separação de duas funções dentro do mesmo bloco --> des/ativar alerta e consulta de respetiva lista de notificações
+
+3. Mais uma funcionalidade Limpesa de Casa.

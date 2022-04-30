@@ -1,0 +1,110 @@
+label div {
+    background-color: rgb(240, 240, 235);
+    border-radius: 15px;
+    padding: 10px;
+    margin: 0 10px;
+}
+
+header {
+    position: relative;
+}
+
+#info {
+    position: absolute;
+    bottom: 10px;
+    left: 110px;
+    font-size: 20px;
+    margin: 0;
+}
+
+form {
+    width: 350px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.scroll > div {
+    font-size: 30px;
+    text-decoration: underline;
+    margin-top: 30px;
+}
+
+input {
+    height: 0;
+    width: 0;
+}
+
+label input:checked + div {
+    outline: 3px solid blueviolet;
+}
+
+footer {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#start div {
+    border-radius: 50%;
+    background-color: beige;
+    padding: 20px 20px;
+    margin-bottom: 12px;
+}
+
+#start:active div {
+    outline: 5px dashed blueviolet;
+}
+
+form:last-child {
+    margin-bottom: 30px;
+}
+
+i {
+    margin-right: 5px;
+}
+
+#start div i {
+    margin: 0;
+    font-size: 40px;
+    margin-left: 10px;
+}
+
+.scroll div:first-child {
+    margin-top: 20px;
+}
+
+input[disabled=disabled] + div {
+    background-color: rgb(206, 206, 206);
+    color: rgb(111, 105, 117);
+    outline: 3px dashed blueviolet;
+}
+
+.scroll {
+    height: 370px;
+    background-color: transparent;
+    margin-left: 60px;
+}
+
+main {
+    position: relative;
+}
+
+#consult {
+    position: absolute;
+    top: 0;
+    left: 60px;
+    background-color: rgba(240, 248, 255, 0.705);
+    width: 390px;
+    padding: 8px 0;
+}
+
+#consult:hover {
+    background-color: azure;
+}
+
+#consult {
+    display: none;
+}

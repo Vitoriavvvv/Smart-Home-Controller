@@ -1,4 +1,4 @@
-li {
+/* li {
     background-color: beige;
     margin-left: 30px;
     margin-right: 30px;
@@ -12,6 +12,21 @@ li:hover {
 }
 
 #addGadget {
-    /* button position */
     margin-top: 200px;
+} */
+
+.menu-box {
+    height: 60px;
+    line-height: 60px;
+    margin: 10px auto;
+    font-size: 22px;
+}
+
+.box:hover {
+    box-shadow: 0 0 8px 5px rgba(0, 0, 0, 0.2);
+}
+
+.menu-icon {
+    font-size: 30px;
+    margin-top: 8px;
 }
