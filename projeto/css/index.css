@@ -65,11 +65,11 @@ footer {
     height: 30px;
     width: 500px;
     align-items: center;
-    background-image: url('../imgs/app.jpg');
-    background-position: bottom;
+/*     background-image: url('../imgs/app.jpg');
+    background-position: bottom; */
 }
 
-#weather-wrapper {
+/* #weather-wrapper {
     margin-top: 30px;
 }
 
@@ -90,10 +90,6 @@ footer {
 #description {
     margin-top: 12px;
     color: rgba(110, 47, 5, 0.877);
-}
-
-#weather-wrapper > div {
-/*     display: inline-block; */
 }
 
 main {
@@ -136,9 +132,13 @@ header, main {
 @keyframes show {
     0% {opacity: 0;}
     100% {opacity: 1;}
-}
+} */
 
 
 ::-webkit-scrollbar {
     display: none; 
+}
+
+main {
+    padding-top: 20px;
 }

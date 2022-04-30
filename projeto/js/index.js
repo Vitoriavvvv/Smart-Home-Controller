@@ -49,7 +49,7 @@ function changePage(indexPage) {
     document.getElementsByClassName("point")[indexPage].classList.add("active");
 }
 
-if (localStorage.getItem("firstTime") == 'false') {
+/* if (localStorage.getItem("firstTime") == 'false') {
     showMenu();
 }
 
@@ -68,4 +68,4 @@ function showMenu () {
     var main = document.getElementsByTagName("main")[0];
     main.style.opacity = 1;
     main.style.marginTop = '15px';
-}
+} */

@@ -34,7 +34,9 @@ function startNotifCleaning() {
     var limpeza_total = JSON.parse(localStorage.getItem("limpeza"));
     if (limpeza_total != null) {
         for (var i = 0; i < limpeza_total.length; i++) {
-            startNotifCleaningCurr(i);
+            if (limpeza_total[i] != null) {
+                startNotifCleaningCurr(i);
+            }
         }
     }
 }
@@ -58,56 +60,48 @@ function startNotifCleaningCurr (index_cleaning) {
     var rets_temp = [];
     
     var limpeza = JSON.parse(localStorage.getItem("limpeza"))[index_cleaning];
-    if (limpeza != null) {
-        for (var i = 0; i < limpeza.length; i++) {
-            const index = i;
-            const ret = setInterval(function() {
-                    var limpeza_total = JSON.parse(localStorage.getItem("limpeza"));
-                    var limpeza = limpeza_total[index_cleaning];
-                    if (--limpeza[index].timeout == 0) {
-                        const splits = document.URL.split("/");
-                        if (splits[splits.length - 1] == "limpeza.html") {
-                            document.getElementsByTagName("input")[limpeza[index].index].removeAttribute("disabled");
-                            if (document.querySelectorAll("input[disabled=disabled]").length == 0) {
-                                document.getElementById("consult").style.display = "none";
-                            }
+    for (var i = 0; i < limpeza.length; i++) {
+        const index = i;
+        const ret = setInterval(function() {
+                var limpeza_total = JSON.parse(localStorage.getItem("limpeza"));
+                if (--limpeza_total[index_cleaning][index].timeout == 0) {
+                    stopTimeout(index_cleaning, index);
+                    const splits = document.URL.split("/");
+                    if (splits[splits.length - 1] == "limpeza.html") {
+                        document.getElementsByTagName("input")[limpeza[index].index].removeAttribute("disabled");
+                        if (document.querySelectorAll("input[disabled=disabled]").length == 0) {
+                            document.getElementById("consult").style.display = "none";
                         }
-                        if (splits[splits.length - 1] != "processos.html") {
-                            alert("Concluiu a limpeza de " + limpeza[index].name + ".");
-                        }
-                        var numDlts = JSON.parse(localStorage.getItem("numDeletes"));
-                        numDlts[index_cleaning]++;
-                        localStorage.setItem("numDeletes", JSON.stringify(numDlts));
-                        if (numDlts[index_cleaning] == limpeza.length) {
-                            limpeza_total[index_cleaning] = null;
-                            stopTimeout(index_cleaning);
-                        }
-                    } else {
-                        limpeza_total[limpeza_total.length - 1] = limpeza;
                     }
-                    localStorage.setItem("limpeza", JSON.stringify(limpeza_total));
-            }, 1000);
-            rets_temp[i] = ret;
-        }
-        rets[index_cleaning] = rets_temp;
-        localStorage.setItem("rets", JSON.stringify(rets));
+                    if (splits[splits.length - 1] != "processos.html") {
+                        alert("Concluiu a limpeza de " + limpeza[index].name + ".");
+                    }
+                    var numDlts = JSON.parse(localStorage.getItem("numDeletes"));
+                    if (++numDlts[index_cleaning] == limpeza.length) {
+                        limpeza_total[index_cleaning] = null;
+                    }
+                    localStorage.setItem("numDeletes", JSON.stringify(numDlts));
+                }
+                localStorage.setItem("limpeza", JSON.stringify(limpeza_total));
+        }, 1000);
+        rets_temp[i] = ret;
     }
+    rets[index_cleaning] = rets_temp;
+    localStorage.setItem("rets", JSON.stringify(rets));
 }
 
-function stopTimeout(index_cleaning) {
+function stopTimeout(index_cleaning, index) {
     var rets = JSON.parse(localStorage.getItem("rets"));
-    for (var i = 0; i < rets[index_cleaning].length; i++) {
-        clearInterval(rets[index_cleaning][i]);
-    }
+    clearInterval(rets[index_cleaning][index]);
 }
     
 setInterval(function () {
    var date = new Date();
    var top_bar = document.getElementById("top-bar");
 
-   var day = date.getDay();
+   var day = date.getDay() + 1;
    if (day < 10) { day = "0" + day;}
-   var month = date.getMonth();
+   var month = date.getMonth() + 1;
    if (month < 10) { month = "0" + month;}
    var hour = date.getHours();
    if (hour < 10) { hour = "0" + hour;}

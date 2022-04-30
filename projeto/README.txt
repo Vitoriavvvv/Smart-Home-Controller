@@ -27,3 +27,5 @@ Se quiser modificar as informações dos blocos, ir ao "js/index.js"
 2. Separação de duas funções dentro do mesmo bloco --> des/ativar alerta e consulta de respetiva lista de notificações
 
 3. Mais uma funcionalidade Limpesa de Casa.
+
+4. Design geral.

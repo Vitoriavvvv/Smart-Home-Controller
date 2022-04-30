@@ -10,17 +10,22 @@ const categorias = [
 
 /****************************************************************************/
 
+
+// construir as categorias e suas opções
 var main = document.getElementsByClassName("scroll")[0];
 for (var i = 0; i < categorias.length; i++) {
     var categoria = categorias[i];
+    // construir o título
     var titulo = document.createElement("div");
     titulo.innerHTML = categoria.categoria;
     main.appendChild(titulo);
+    // construir as opções
     var form = document.createElement("form");
     for (var j = 0; j < categoria.opcoes.length; j++) {
         var label = document.createElement("label");
         var checkBox = document.createElement("input");
         checkBox.setAttribute("type", "checkbox");
+        checkBox.setAttribute("id", categoria.opcoes[j]);
         label.appendChild(checkBox);
         var div = document.createElement("div");
         div.appendChild(document.createTextNode(categoria.opcoes[j]));
@@ -29,11 +34,15 @@ for (var i = 0; i < categorias.length; i++) {
     }
     main.appendChild(form);
 }
+
+// 
 const checkBoxes = document.getElementsByTagName("input");
 const limpeza_total = JSON.parse(localStorage.getItem("limpeza"));
 if (limpeza_total == null) {
+    // inicialização da limpeza
     localStorage.setItem("limpeza", JSON.stringify([]));
 } else {
+    // adicionar atributo "disabled" aos processos correntes
     for (var i = 0; i < limpeza_total.length; i++) {
         if (limpeza_total[i] != null) {
             for (var j = 0; j < limpeza_total[i].length; j++) {
@@ -58,23 +67,22 @@ function startCleaning () {
                 break;
             }
         }
-        if (numNull == limpeza_total) {
+        if (numNull == limpeza_total.length) {
             limpeza_total = [];
             localStorage.removeItem("numDeletes");
             localStorage.removeItem("rets");
         }
-        alert("Começa a limpeza...");
         var limpeza = [];
-        var itemIndex = 0;
+        var itemIndex = 0; // item index in the interface
         var i = 0; // curr option index
         for (var j = 0; j < categorias.length; j++) {
             if (options[i].parentElement.parentElement.previousSibling.innerHTML == categorias[j].categoria) {
                 for (var z = 0; z < categorias[j].opcoes.length; z++) {
-                    if (categorias[j].opcoes[z] == options[i].nextSibling.innerHTML) {
+                    if (categorias[j].opcoes[z] == options[i].id) {
                         options[i].checked = false;
                         options[i].setAttribute("disabled", "disabled");
+                        limpeza[limpeza.length] = {name: options[i].id, timeout: categorias[j].tempos[z], index: itemIndex};
                         i++;
-                        limpeza[limpeza.length] = {name: categorias[j].opcoes[z], timeout: categorias[j].tempos[z], index: itemIndex};
                         if (i == options.length) {
                             break;
                         }
@@ -91,6 +99,7 @@ function startCleaning () {
         limpeza_total[limpeza_total.length] = limpeza;
         localStorage.setItem("limpeza", JSON.stringify(limpeza_total));
         startNotifCleaningCurr(limpeza_total.length - 1);
+        alert("Começa a limpeza...");
         document.getElementById("consult").style.display = "block";
     }
 }

@@ -30,7 +30,6 @@ function constructBar (name, timeout) {
     processoBar.classList.add("process-bar");
     var insideBar = document.createElement("div");
     insideBar.classList.add("inside-bar");
-    insideBar.style.animation = "process 1 " + timeout + "s forwards";
     processoBar.appendChild(insideBar);
 
     var scroll = document.getElementsByClassName("scroll")[0];
@@ -43,7 +42,7 @@ function constructBar (name, timeout) {
        var time = document.getElementsByClassName("timeLeft")[index];
        time.innerHTML = parseInt(time.innerHTML, 10) - 1;
        if (time.innerHTML == "0") {
-           clearInterval(localStorage.getItem("rets_processes" + index));
+           clearInterval(JSON.parse(localStorage.getItem("rets_processes"))[index]);
            var p = document.getElementsByTagName("p")[index];
            p.innerHTML = name + " | Concluída<span class='timeLeft' style='display:none;'>0</span>";
            p.nextSibling.childNodes[0].style.backgroundColor = "green";
@@ -52,4 +51,5 @@ function constructBar (name, timeout) {
     }, 1000);
     rets[index] = ret;
     localStorage.setItem("rets_processes", JSON.stringify(rets));
+    insideBar.style.animation = "process 1 linear " + timeout + "s forwards";
 }
