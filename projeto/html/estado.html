@@ -172,12 +172,7 @@
             }
 
             currElem = trs[3].children[1];
-            var savedIlum = JSON.parse(localStorage.getItem("lumin"));
-            if (savedIlum != null && savedIlum[i] != null) {
-                currElem.innerHTML = savedIlum[i] + " %";
-            } else {
-                currElem.innerHTML = statistics[i].ilum;
-            }
+            currElem.innerHTML = statistics[i].ilum;
             if (!currElem.classList.contains(statistics[i].classList[2])) {
                 currElem.classList.replace(currElem.classList[0], statistics[i].classList[2]);
             }
