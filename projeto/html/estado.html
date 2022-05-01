@@ -12,6 +12,7 @@
 <body>
     <div id="app">
         <div id="top-bar"></div>
+        <nav id="breadcrumb"></nav>
         <header>
             <div class="title-wrapper">
                 <a href="../index.html">
@@ -24,7 +25,7 @@
 
             <form action="">
                 <label for="locals">Seleciona o local:&nbsp;</label>
-                <select id="locals" onchange="changeLocal()">
+                <select id="locals" onchange="changeLocal(null)">
                     <option name="local" value="Casa de Banho" selected>Casa de Banho</option>
                     <option name="local" value="Cozinha">Cozinha</option>
                     <option name="local" value="Entrada">Entrada</option>
@@ -41,27 +42,32 @@
                     </th>
                 </tr>
                 <tr>
-                    <td>Temperatura:</td>
-                    <td class="ok">24.5 ºC</td>
+                    <td>Velocidade da Rede :</td>
+                    <td class="danger">20 Mbps</td>
                     <td></td>                   
                 </tr>
                 <tr>
-                    <td>Iluminação:</td>
+                    <td>Temperatura :</td>
+                    <td class="ok">24 ºC</td>
+                    <td></td>                   
+                </tr>
+                <tr>
+                    <td>Luminosidade :</td>
                     <td class="ok">70 %</td>
                     <td></td>                   
                 </tr>
                 <tr>
-                    <td>Humidade:</td>
+                    <td>Humidade :</td>
                     <td class="danger">80 %</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>Nível de O<sub>2</sub>:</td>
+                    <td>Nível de O<sub>2</sub> :</td>
                     <td class="ok">22.2 %</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>Nível de CO<sub>2</sub>:</td>
+                    <td>Nível de CO<sub>2</sub> :</td>
                     <td class="ok">0.20 %</td>
                     <td></td>
                 </tr>
@@ -115,60 +121,86 @@
 
     <script>
         const statistics = [
-             {local: "Casa de Banho", temp: "24.5 ºC", ilum: "70 %", hum: "80 %", oxyg: "22.2 %", carbon: "0.20 %",
-             classList: ["ok", "ok","danger", "ok", "ok"]},
-             {local: "Cozinha", temp: "21.5 ºC", ilum: "89 %", hum: "65 %", oxyg: "15.6 %", carbon: "1.56 %",
-             classList: ["ok", "ok","danger", "danger", "danger"]},
-             {local: "Entrada", temp: "23.5 ºC", ilum: "60 %", hum: "55 %", oxyg: "21.0 %", carbon: "0.04 %",
-             classList: ["ok", "ok", "ok", "ok", "ok"]},
-             {local: "Quarto 1", temp: "28.3 ºC", ilum: "45 %", hum: "30 %", oxyg: "20.1 %", carbon: "1.11 %",
-             classList: ["ok", "ok", "danger", "ok", "danger"]},
-             {local: "Quarto 2", temp: "26.5 ºC", ilum: "88 %", hum: "45 %", oxyg: "25.5 %", carbon: "0.05 %",
-             classList: ["ok", "ok","ok", "danger", "ok"]},
-             {local: "Sala", temp: "23.0 ºC", ilum: "90 %", hum: "50 %", oxyg: "20.8 %", carbon: "0.10 %",
-             classList: ["ok", "ok","ok", "ok", "ok"]},
+             {local: "Casa de Banho", speed: "20 Kbps", temp: "24 ºC", ilum: "70 %", hum: "80 %", oxyg: "22.2 %", carbon: "0.20 %",
+             classList: ["danger", "ok", "ok","danger", "ok", "ok"]},
+             {local: "Cozinha", speed: "150 Mbps", temp: "21 ºC", ilum: "89 %", hum: "65 %", oxyg: "15.6 %", carbon: "1.56 %",
+             classList: ["ok", "ok", "ok","danger", "danger", "danger"]},
+             {local: "Entrada", speed: "50 Kbps", temp: "23 ºC", ilum: "60 %", hum: "55 %", oxyg: "21.0 %", carbon: "0.04 %",
+             classList: ["danger", "ok", "ok", "ok", "ok", "ok"]},
+             {local: "Quarto 1", speed: "120 Mbps", temp: "28 ºC", ilum: "45 %", hum: "30 %", oxyg: "20.1 %", carbon: "1.11 %",
+             classList: ["ok", "ok", "ok", "danger", "ok", "danger"]},
+             {local: "Quarto 2", speed: "134 Mbps", temp: "26 ºC", ilum: "88 %", hum: "45 %", oxyg: "25.5 %", carbon: "0.05 %",
+             classList: ["ok", "ok", "ok","ok", "danger", "ok"]},
+             {local: "Sala", speed: "113 Mbps", temp: "23 ºC", ilum: "90 %", hum: "50 %", oxyg: "20.8 %", carbon: "0.10 %",
+             classList: ["ok", "ok", "ok","ok", "ok", "ok"]},
         ];
 
-        function changeLocal() {
+        var index = JSON.parse(localStorage.getItem("local"));
+        if (index != null) {
+            document.getElementsByTagName("option")[index].selected = true;
+            changeLocal(index);
+        } else {
+            changeLocal(0);
+        }
+
+        function changeLocal(index) {
             var options = document.getElementsByTagName("option");
-            var index = 0
-            for (; index < options.length && !options[index].selected; index++) {}
-            for (var i = 0; i < statistics.length; i++) {
-                if (statistics[i].local == options[index].value) {
-                    var trs = document.getElementsByClassName("lista")[0].getElementsByTagName("tr");
-                    trs[0].children[0].innerHTML = statistics[i].local;
-                    var currElem = trs[1].children[1];
-                    currElem.innerHTML = statistics[i].temp;
-                    if (!currElem.classList.contains(statistics[i].classList[0])) {
-                        currElem.classList.replace(currElem.classList[0], statistics[i].classList[0]);
-                    }
-
-                    currElem = trs[2].children[1];
-                    currElem.innerHTML = statistics[i].ilum;
-                    if (!currElem.classList.contains(statistics[i].classList[1])) {
-                        currElem.classList.replace(currElem.classList[0], statistics[i].classList[1]);
-                    }
-
-                    currElem = trs[3].children[1];
-                    currElem.innerHTML = statistics[i].hum;
-                    if (!currElem.classList.contains(statistics[i].classList[2])) {
-                        currElem.classList.replace(currElem.classList[0], statistics[i].classList[2]);
-                    }
-
-                    currElem = trs[4].children[1];
-                    currElem.innerHTML = statistics[i].oxyg;
-                    if (!currElem.classList.contains(statistics[i].classList[3])) {
-                        currElem.classList.replace(currElem.classList[0], statistics[i].classList[3]);
-                    }
-
-                    currElem = trs[5].children[1];
-                    currElem.innerHTML = statistics[i].carbon;
-                    if (!currElem.classList.contains(statistics[i].classList[4])) {
-                        currElem.classList.replace(currElem.classList[0], statistics[i].classList[4]);
-                    }
-                    break;
-                }
+            var i = 0;
+            if (index != null) {
+                i = index;
+            } else {
+                for (; i < options.length && !options[i].selected; i++) {}
             }
+
+            var trs = document.getElementsByClassName("lista")[0].getElementsByTagName("tr");
+            trs[0].children[0].innerHTML = statistics[i].local;
+            var currElem = trs[1].children[1];
+            currElem.innerHTML = statistics[i].speed;
+            if (!currElem.classList.contains(statistics[i].classList[0])) {
+                currElem.classList.replace(currElem.classList[0], statistics[i].classList[0]);
+            }
+
+            currElem = trs[2].children[1];
+            var savedTemp = JSON.parse(localStorage.getItem("ac_temp"));
+            if (savedTemp != null && savedTemp[i] != null) {
+                currElem.innerHTML = savedTemp[i] + " ºC";
+            } else {
+                currElem.innerHTML = statistics[i].temp;
+            }
+            if (!currElem.classList.contains(statistics[i].classList[1])) {
+                currElem.classList.replace(currElem.classList[0], statistics[i].classList[1]);
+            }
+
+            currElem = trs[3].children[1];
+            var savedIlum = JSON.parse(localStorage.getItem("lumin"));
+            if (savedIlum != null && savedIlum[i] != null) {
+                currElem.innerHTML = savedIlum[i] + " %";
+            } else {
+                currElem.innerHTML = statistics[i].ilum;
+            }
+            if (!currElem.classList.contains(statistics[i].classList[2])) {
+                currElem.classList.replace(currElem.classList[0], statistics[i].classList[2]);
+            }
+
+            currElem = trs[4].children[1];
+            currElem.innerHTML = statistics[i].hum;
+            if (!currElem.classList.contains(statistics[i].classList[3])) {
+                currElem.classList.replace(currElem.classList[0], statistics[i].classList[3]);
+            }
+
+            currElem = trs[5].children[1];
+            currElem.innerHTML = statistics[i].oxyg;
+            if (!currElem.classList.contains(statistics[i].classList[4])) {
+                currElem.classList.replace(currElem.classList[0], statistics[i].classList[4]);
+            }
+
+            currElem = trs[6].children[1];
+            currElem.innerHTML = statistics[i].carbon;
+            if (!currElem.classList.contains(statistics[i].classList[5])) {
+                currElem.classList.replace(currElem.classList[0], statistics[i].classList[5]);
+            }
+
+            localStorage.setItem("local", i);
         }
     </script>
 </body>

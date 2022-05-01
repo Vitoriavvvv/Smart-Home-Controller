@@ -9,9 +9,21 @@ const stay_time = 5;
 /****************************************************************************/
 
 // criar um registo
-var now = new Date();
-const record = {treated: 0, date: now.getDate() + "-" + (now.getMonth() + 1) + "-" + now.getFullYear(),
-                hour: now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds(), local: "Varanda", how: "Não Atendida"
+var date = new Date();
+var day = date.getDay() + 1;
+if (day < 10) { day = "0" + day;}
+var month = date.getMonth() + 1;
+if (month < 10) { month = "0" + month;}
+var hour = date.getHours();
+if (hour < 10) { hour = "0" + hour;}
+var minute = date.getMinutes();
+if (minute < 10) { minute = "0" + minute;}
+var second = date.getSeconds();
+if (second < 10) { second = "0" + second;}
+var suffix = hour < 12 ? " AM" : " PM";
+
+const record = {treated: 0, date: day + "-" + month + "-" + date.getFullYear(),
+                hour: hour + ":" + minute + ":" + second + suffix, local: "Varanda", how: "Não Atendida"
                 };
 record_list = localStorage.getItem("intruderRecords");
 

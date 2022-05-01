@@ -5,7 +5,7 @@ const categorias = [
     {categoria: "Casa de Banho", opcoes: ["Banheira", "Pia", "Sanita"], tempos: [4, 8, 6]},
     {categoria: "Cozinha", opcoes: ["Exaustor", "Fogão", "Forno", "Loiças", "Microondas"], tempos: [7, 4, 6, 6, 9]},
     {categoria: "General", opcoes: ["Carros", "Chão", "Janelas", "Roupas"], tempos: [5, 4, 8, 9]},
-    {categoria: "Outros", opcoes: ["Piscina"], tempos: [10]},
+    {categoria: "Outros", opcoes: ["Piscina"], tempos: [30]},
 ]
 
 /****************************************************************************/

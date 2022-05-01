@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <title>Luzes</title>
     <link rel="stylesheet" href="../css/comum.css">
-    <link rel="stylesheet" href="../css/luzes.css">
+    <link rel="stylesheet" href="../css/ac_luzes.css">
     <link rel="stylesheet" href="../fa/css/all.css">
 </head>
 <body>
     <div id="app">
         <div id="top-bar"></div>
+        <nav id="breadcrumb"></nav>
         <header>
             <div class="title-wrapper">
                 <a href="./Funcionalidades.html">
@@ -19,15 +20,20 @@
             </div>
         </header>    
         
-        <main class="box">
-            <ul>
+        <main>
+            <ul class="box">
                 <li>
                     <span>Casa de Banho</span>
-                        <span>
-                            off<div class="onOffBox" onclick="switchOnOff(event, 0)">
-                                <div class="onOffCircle"></div>
-                            </div>on
-                        </span>
+                    <span>
+                        off<div class="onOffBox" onclick="switchOnOff(event, 0)">
+                            <div class="onOffCircle"></div>
+                        </div>on
+                    </span>
+                    <div class="ilum">
+                        <label for="">Luminosidade:&nbsp;</label>
+                        <input type="number" max="100" min="0">
+                        <label for="">&nbsp;%</label>
+                    </div>
                 </li>
                 <li>
                     <span>Cozinha</span>
@@ -36,15 +42,25 @@
                             <div class="onOffCircle"></div>
                         </div>on
                     </span>
+                    <div class="ilum">
+                        <label for="">Luminosidade:&nbsp;</label>
+                        <input type="number" max="100" min="0">
+                        <label for="">&nbsp;%</label>
+                    </div>
                 </li>
 
                 <li>
                     <span>Entrada</span>
-                            <span>
-                            off<div class="onOffBox" onclick="switchOnOff(event, 2)">
-                                <div class="onOffCircle"></div>
-                            </div>on
+                    <span>
+                    off<div class="onOffBox" onclick="switchOnOff(event, 2)">
+                        <div class="onOffCircle"></div>
+                    </div>on
                     </span>
+                    <div class="ilum">
+                        <label for="">Luminosidade:&nbsp;</label>
+                        <input type="number" max="100" min="0">
+                        <label for="">&nbsp;%</label>
+                    </div>
                 </li>
 
                 <li>
@@ -54,6 +70,11 @@
                             <div class="onOffCircle"></div>
                         </div>on
                     </span>
+                    <div class="ilum">
+                        <label for="">Luminosidade:&nbsp;</label>
+                        <input type="number" max="100" min="0">
+                        <label for="">&nbsp;%</label>
+                    </div>
                 </li>
 
                 <li>
@@ -63,6 +84,11 @@
                             <div class="onOffCircle"></div>
                         </div>on
                     </span>
+                    <div class="ilum">
+                        <label for="">Luminosidade:&nbsp;</label>
+                        <input type="number" max="100" min="0">
+                        <label for="">&nbsp;%</label>
+                    </div>
                 </li>
                 <li>
                     <span>Sala</span>
@@ -71,6 +97,11 @@
                             <div class="onOffCircle"></div>
                         </div>on
                     </span>
+                    <div class="ilum">
+                        <label for="">Luminosidade:&nbsp;</label>
+                        <input type="number" max="100" min="0">
+                        <label for="">&nbsp;%</label>
+                    </div>
                 </li>
             </ul>
         </main>
@@ -117,5 +148,6 @@
     <form name="activateAlert" action="./alerta_intruso.html"></form>
     <script src="../js/alerta_comum.js"></script>
     <script src="../js/buttonSwitch.js"></script>
+    <script src="../js/luzes.js"></script>
 </body>
 </html>

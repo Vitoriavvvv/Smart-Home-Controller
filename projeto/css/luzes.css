@@ -5,9 +5,10 @@ main {
 
 
   li {
+    position: relative;
     font-size: 20px;
-    height: 68px;
-    line-height: 68px;
+    height: 80px;
+    line-height: 50px;
     padding: 10px;
     border-bottom: 1px solid;
     width: 350px;
@@ -28,4 +29,9 @@ main {
 
   .box {
     width: 400px;
+  }
+
+  .ilum {
+    position: absolute;
+    bottom: 0;
   }

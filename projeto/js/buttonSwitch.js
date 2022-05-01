@@ -25,6 +25,8 @@ function switchOnOff(e, index) {
             target_classList = e.target.parentElement.classList;
         }
         e.preventDefault();
+    } else {
+        target_classList = document.getElementsByClassName("onOffBox")[index].classList;
     }
 
     if (records[index] == false) {

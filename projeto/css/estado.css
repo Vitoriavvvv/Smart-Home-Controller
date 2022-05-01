@@ -78,7 +78,7 @@ h2{
 
 .box {
     width: 400px;
-    margin-top: 50px;
+    margin-top: 40px;
 }
 
 .local {
@@ -96,7 +96,7 @@ h2{
 
 td {
     text-align: right;
-    padding: 20px;
+    padding: 15px;
 }
 
 tr:nth-child(2) td {
@@ -108,6 +108,5 @@ tr:last-of-type td {
 }
 
 tr td:first-child {
-    text-decoration: underline;
     font-size: 20px;
 }

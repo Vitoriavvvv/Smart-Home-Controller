@@ -109,10 +109,55 @@ setInterval(function () {
    if (minute < 10) { minute = "0" + minute;}
    var second = date.getSeconds();
    if (second < 10) { second = "0" + second;}
-   var suffix = hour < 12 ? "AM" : "PM";
+   var suffix = hour < 12 ? " AM" : " PM";
 
    top_bar.innerHTML ="<span>" + day + "-" + month + "-" + date.getFullYear() + "</span>"
-                + "<span>" + hour + ":" + minute + ":" + second + " " + suffix + "</span>" 
+                + "<span>" + hour + ":" + minute + ":" + second + suffix + "</span>" 
                 + '<span>80%</span><i class="fa-solid fa-battery-three-quarters"></i><i class="fa-solid fa-signal"></i>' + 
                 '<i class="fa-solid fa-wifi"></i><i class="fa-solid fa-volume-high"></i>';
 }, 1000);
+
+constructBreadcrumb();
+
+function constructBreadcrumb() {
+    var title = document.getElementById("title");
+    if (title != null) {
+        title = title.innerHTML;
+        var nav = document.getElementById("breadcrumb");
+        nav.appendChild(constructLink("&nbsp&nbspMenu Principal&nbsp;&nbsp>&nbsp&nbsp;", "../index.html"));
+    
+        var trail = JSON.parse(localStorage.getItem("trail"));
+        if (trail == null) {
+            trail = [];
+        }
+        var removeFurther = false;
+        for (var i = 0; i < trail.length;) {
+            if (removeFurther) {
+                trail.splice(i, 1);
+            } else {
+                if (trail[i].title == title) {
+                    removeFurther = true;
+                    nav.appendChild(constructLink(title, trail[i].link));
+                } else {
+                    nav.appendChild(constructLink(trail[i].title + "&nbsp;&nbsp>&nbsp&nbsp;" , trail[i].link));
+                }
+                i++;
+            }
+        }
+        if (!removeFurther) {
+            var url = document.URL.split("/");
+            nav.appendChild(constructLink(title, url[url.length - 1]));
+            trail[trail.length] = {title: title, link: url[url.length - 1]};
+        }
+        localStorage.setItem("trail", JSON.stringify(trail));
+    } else {
+        localStorage.setItem("trail", JSON.stringify([]));
+    }
+}
+
+function constructLink (title, link) {
+    var a = document.createElement("a");
+    a.href = link;
+    a.innerHTML = title;
+    return a;
+}

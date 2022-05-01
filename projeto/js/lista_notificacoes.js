@@ -9,9 +9,9 @@ const intervalSeconds = 2;
 // Pode adicionar mais categorias aqui conforme o formato apresentado abaixo
 // os nomes das subcategorias não podem ser iguais
 const categories_list = [
-        {name: "Fuga de Gás", link: "#"},
-        {name: "Incêndio", link: "#"},
-        {name: "Intruso", link: "notificacoes_intruso.html"}
+        {name: "Fuga de Gás", link: "#", icon: '<i class="fa-solid fa-skull-crossbones"></i>'},
+        {name: "Incêndio", link: "#", icon: '<i class="fa-solid fa-fire"></i>'},
+        {name: "Intruso", link: "notificacoes_intruso.html", icon: '<i class="fa-solid fa-user-large-slash"></i>'}
 ];
 
 /****************************************************************************/
@@ -20,7 +20,7 @@ const categories_list = [
 if (categories_list != null) {
     lista = document.getElementById("lista-notificacoes");
     for (var i = 0; i < categories_list.length; i++) {
-        const category = createCategory(categories_list[i].name);
+        const category = createCategory(categories_list[i].name, categories_list[i].icon);
         lista.appendChild(category);
 
         var a = document.createElement("a");
@@ -32,12 +32,12 @@ if (categories_list != null) {
     }
 }
 
-function createCategory(title) {
+function createCategory(title, icon) {
     const category = document.createElement("li");
     category.setAttribute("id", getId(title));
     
     span = document.createElement("span");
-    span.innerHTML = title;
+    span.innerHTML = icon + title;
     
     onoffCircle = document.createElement("div");
     onoffCircle.classList.add("onOffCircle");

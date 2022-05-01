@@ -5,7 +5,15 @@ const temps = document.getElementsByTagName("input");
 for (var i = 0; i < temps.length; i++) {
     const index = i;
     temps[i].addEventListener("input", function () {
-        saveTemperature(index);
+        if (temps[index].value > 40 || temps[index].value < -20) {
+            alert("Temperatura inválida.\nA tempratura tem de estar entre -20ºC e 40ºC.");
+            if (onOffBox[index].classList.contains("on")) {
+                switchOnOff(null, index);
+                var ac_temp = JSON.parse(localStorage.getItem("ac_temp"));
+                ac_temp[index] = null;
+                localStorage.setItem("ac_temp", JSON.stringify(ac_temp));
+            }
+         }
     });
     onOffBox[i].addEventListener("click", function () {
         verifyValue(index);
@@ -31,14 +39,14 @@ function saveTemperature (index) {
 }
 
 function verifyValue (index) {
-    var ac_temp = JSON.parse(localStorage.getItem("ac_temp"));
-    if (ac_temp[index] == null) {
+    var ac_temp = document.getElementsByTagName("input");
+    if (ac_temp[index].value == "") {
        alert("Temperatura não definida.");
-       target_classList = document.getElementsByClassName("onOffBox")[index].classList;
        switchOnOff(null, index);
-    } else if (ac_temp[index] > 40 || ac_temp[index] < -20) {
-       alert("Temperatura inválida.\nA tempratura tem de estar entre -20 e 40 ºC.");
-       target_classList = document.getElementsByClassName("onOffBox")[index].classList;
+    } else if (ac_temp[index].value > 40 || ac_temp[index].value < -20) {
+       alert("Temperatura inválida.\nA tempratura tem de estar entre -20ºC e 40ºC.");
        switchOnOff(null, index);
+    } else {
+        saveTemperature(index);
     }
 }

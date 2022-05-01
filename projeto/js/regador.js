@@ -7,7 +7,8 @@ for (var i = 0; i < addHours.length; i++) {
     addHours[i].addEventListener("click", function() {
        addHour(index);
     });
-    if (horarios == null || horarios[i].length == 0) {
+    if (horarios == null || horarios.length == 0 || 
+        horarios[i] == null || horarios[i].length == 0) {
         addNoHourInfo(i);
     }
 }
@@ -17,7 +18,7 @@ if (horarios == null) {
 } else {
     for (var i = 0; i < horarios.length; i++) {
         const sublist = horarios[i];
-        for (var j = 0; j < sublist.length; j++) {
+        for (var j = 0; sublist != null && j < sublist.length; j++) {
             addHour(i);
             const inputs = document.getElementsByTagName("input");
             inputs[inputs.length - 1].value = horarios[i][j];
