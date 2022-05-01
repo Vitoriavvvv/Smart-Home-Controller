@@ -34,7 +34,7 @@ function startNotifCleaning() {
     var limpeza_total = JSON.parse(localStorage.getItem("limpeza"));
     if (limpeza_total != null) {
         for (var i = 0; i < limpeza_total.length; i++) {
-            if (limpeza_total[i] != null) {
+            if (JSON.parse(localStorage.getItem("limpeza"))[i] != null) {
                 startNotifCleaningCurr(i);
             }
         }
@@ -60,39 +60,46 @@ function startNotifCleaningCurr (index_cleaning) {
     var rets_temp = [];
     
     var limpeza = JSON.parse(localStorage.getItem("limpeza"))[index_cleaning];
-    for (var i = 0; i < limpeza.length; i++) {
-        const index = i;
-        const ret = setInterval(function() {
-                var limpeza_total = JSON.parse(localStorage.getItem("limpeza"));
-                if (--limpeza_total[index_cleaning][index].timeout == 0) {
-                    stopTimeout(index_cleaning, index);
-                    const splits = document.URL.split("/");
-                    if (splits[splits.length - 1] == "limpeza.html") {
-                        document.getElementsByTagName("input")[limpeza[index].index].removeAttribute("disabled");
-                        if (document.querySelectorAll("input[disabled=disabled]").length == 0) {
-                            document.getElementById("consult").style.display = "none";
+    if (limpeza != null) {
+        for (var i = 0; i < limpeza.length; i++) {
+            const index = i;
+            const ret = setInterval(function() {
+                    var limpeza_total = JSON.parse(localStorage.getItem("limpeza"));
+                    if (limpeza_total[index_cleaning] == null) {
+                        stopTimeout(index_cleaning, index);
+                    } else if (--limpeza_total[index_cleaning][index].timeout == 0) {
+                        stopTimeout(index_cleaning, index);
+                        const splits = document.URL.split("/");
+                        if (splits[splits.length - 1] == "limpeza.html") {
+                            document.getElementsByTagName("input")[limpeza_total[index_cleaning][index].index].removeAttribute("disabled");
+                            if (document.querySelectorAll("input[disabled=disabled]").length == 0) {
+                                document.getElementById("consult").style.display = "none";
+                            }
                         }
+                        if (splits[splits.length - 1] != "processos.html") {
+                            alert("Concluiu a limpeza de " + limpeza_total[index_cleaning][index].name + ".");
+                        }
+                        var numDlts = JSON.parse(localStorage.getItem("numDeletes"));
+                        numDlts[index_cleaning]++;
+                        if (numDlts[index_cleaning] == limpeza_total[index_cleaning].length) {
+                            limpeza_total[index_cleaning] = null;
+                        }
+                        localStorage.setItem("numDeletes", JSON.stringify(numDlts));
                     }
-                    if (splits[splits.length - 1] != "processos.html") {
-                        alert("Concluiu a limpeza de " + limpeza[index].name + ".");
-                    }
-                    var numDlts = JSON.parse(localStorage.getItem("numDeletes"));
-                    if (++numDlts[index_cleaning] == limpeza.length) {
-                        limpeza_total[index_cleaning] = null;
-                    }
-                    localStorage.setItem("numDeletes", JSON.stringify(numDlts));
-                }
-                localStorage.setItem("limpeza", JSON.stringify(limpeza_total));
-        }, 1000);
-        rets_temp[i] = ret;
+                    localStorage.setItem("limpeza", JSON.stringify(limpeza_total));
+            }, 1000);
+            rets_temp[i] = ret;
+        }
+        rets[index_cleaning] = rets_temp;
+        localStorage.setItem("rets", JSON.stringify(rets));
     }
-    rets[index_cleaning] = rets_temp;
-    localStorage.setItem("rets", JSON.stringify(rets));
 }
 
 function stopTimeout(index_cleaning, index) {
     var rets = JSON.parse(localStorage.getItem("rets"));
-    clearInterval(rets[index_cleaning][index]);
+    if (rets[index_cleaning][index] != null) {
+        clearInterval(rets[index_cleaning][index]);
+    }
 }
     
 setInterval(function () {
@@ -117,6 +124,9 @@ setInterval(function () {
                 '<i class="fa-solid fa-wifi"></i><i class="fa-solid fa-volume-high"></i>';
 }, 1000);
 
+
+// dá erro se abrir em dois ou mais tabs no mesmo browser
+/*
 constructBreadcrumb();
 
 function constructBreadcrumb() {
@@ -160,4 +170,4 @@ function constructLink (title, link) {
     a.href = link;
     a.innerHTML = title;
     return a;
-}
+} */

@@ -12,7 +12,10 @@
 <body>
     <div id="app">
         <div id="top-bar"></div>
-        <nav id="breadcrumb"></nav>
+        <nav id="breadcrumb">
+            <a href="../index.html">&nbsp;&nbsp;Menu Principal&nbsp;&nbsp;>&nbsp;&nbsp;</a>
+            <a href="./estado.html">Estados da Casa</a>
+        </nav>
         <header>
             <div class="title-wrapper">
                 <a href="../index.html">
@@ -162,8 +165,8 @@
 
             currElem = trs[2].children[1];
             var savedTemp = JSON.parse(localStorage.getItem("ac_temp"));
-            if (savedTemp != null && savedTemp[i] != null) {
-                currElem.innerHTML = savedTemp[i] + " ºC";
+            if (savedTemp != null && savedTemp[i] != null && savedTemp[i].value != null && savedTemp[i].on) {
+                currElem.innerHTML = savedTemp[i].value + " ºC";
             } else {
                 currElem.innerHTML = statistics[i].temp;
             }

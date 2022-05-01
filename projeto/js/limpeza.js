@@ -46,8 +46,9 @@ if (limpeza_total == null) {
     for (var i = 0; i < limpeza_total.length; i++) {
         if (limpeza_total[i] != null) {
             for (var j = 0; j < limpeza_total[i].length; j++) {
-                if (limpeza_total[i][j].timeout > 0) {
-                    checkBoxes[limpeza_total[i][j].index].setAttribute("disabled", "disabled");
+                var limpeza_total_curr = JSON.parse(localStorage.getItem("limpeza"));
+                if (limpeza_total_curr[i][j].timeout > 0) {
+                    checkBoxes[limpeza_total_curr[i][j].index].setAttribute("disabled", "disabled");
                     document.getElementById("consult").style.display = "block";
                 }
             }
