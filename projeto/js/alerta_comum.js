@@ -106,7 +106,7 @@ setInterval(function () {
    var date = new Date();
    var top_bar = document.getElementById("top-bar");
 
-   var day = date.getDay() + 1;
+   var day = date.getDate();
    if (day < 10) { day = "0" + day;}
    var month = date.getMonth() + 1;
    if (month < 10) { month = "0" + month;}
@@ -118,7 +118,7 @@ setInterval(function () {
    if (second < 10) { second = "0" + second;}
    var suffix = hour < 12 ? " AM" : " PM";
 
-   top_bar.innerHTML ="<span>" + day + "-" + month + "-" + date.getFullYear() + "</span>"
+   top_bar.innerHTML ="<span>" + date.getFullYear() + "-" + month + "-" + day + "</span>"
                 + "<span>" + hour + ":" + minute + ":" + second + suffix + "</span>" 
                 + '<span>80%</span><i class="fa-solid fa-battery-three-quarters"></i><i class="fa-solid fa-signal"></i>' + 
                 '<i class="fa-solid fa-wifi"></i><i class="fa-solid fa-volume-high"></i>';

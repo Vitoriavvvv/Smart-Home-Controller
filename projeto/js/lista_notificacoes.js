@@ -3,7 +3,7 @@
 
 // definir o tempo de intervalo para alerta de intruso
 // unidade: segundos
-const intervalSeconds = 2;
+const intervalSeconds = 5;
 
 
 // Pode adicionar mais categorias aqui conforme o formato apresentado abaixo

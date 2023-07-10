@@ -14,7 +14,7 @@ Se quiser modificar as informações dos blocos, ir ao "js/index.js"
 
 2. Ligar ou Desligar a alerta de intruso, na GUI "Notificações" -> "Emergênica" -> clicar no botão do "Intruso"
 
-3. Ajustar o tempo em que a alerta está ativa, ir ao "js/alerta_intruso.js"
+3. Ajustar o tempo em que o alerta está ativa, ir ao "js/alerta_intruso.js"
 
 4. Ajustar o tempo de intervalo entre 2 alertas, ir ao "js/lista_notificacoes.js"
 
